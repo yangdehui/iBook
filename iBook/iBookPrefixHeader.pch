@@ -1,0 +1,32 @@
+//
+//  iBookPrefixHeader.pch
+//  iBook
+//
+//  Created by zikeys on 2019/12/3.
+//  Copyright © 2019 zikeys. All rights reserved.
+//
+
+#ifndef iBookPrefixHeader_pch
+#define iBookPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/** Thread*/
+#import <SDWebImage.h>
+#import <MJRefresh.h>
+#import <Masonry.h>
+#import <Toast.h>
+#import <IGListKit.h>
+#import <NSObject+YYModel.h>
+
+/** System*/
+#import "PublicMacro.h"
+#import "DebugMarco.h"
+
+/** Category*/
+#import "UIButton+Block.h"
+#import "UIImage+Extension.h"
+#import "UIImage+ImageEffects.h"
+
+#endif /* iBookPrefixHeader_pch */
