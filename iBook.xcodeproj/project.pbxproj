@@ -48,6 +48,8 @@
 		0193F2FC23965A3000A481B3 /* YMJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F223965A3000A481B3 /* YMJSONResponseSerializer.m */; };
 		0193F2FD23965A3000A481B3 /* YMHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F323965A3000A481B3 /* YMHTTPSessionManager.m */; };
 		0193F2FE23965A3000A481B3 /* YMZXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F423965A3000A481B3 /* YMZXClient.m */; };
+		01BC9AAE2397D99D0004F39B /* IGDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */; };
+		01BC9AB12397DA480004F39B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC9AB02397DA480004F39B /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,10 @@
 		0193F2F323965A3000A481B3 /* YMHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHTTPSessionManager.m; sourceTree = "<group>"; };
 		0193F2F423965A3000A481B3 /* YMZXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMZXClient.m; sourceTree = "<group>"; };
 		0193F2F523965A3000A481B3 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IGDemoViewController.h; path = Commom/IGDemoViewController.h; sourceTree = "<group>"; };
+		01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IGDemoViewController.m; path = Commom/IGDemoViewController.m; sourceTree = "<group>"; };
+		01BC9AAF2397DA480004F39B /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		01BC9AB02397DA480004F39B /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		021D560209F3E3AA0729863C /* Pods-iBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.debug.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.debug.xcconfig"; sourceTree = "<group>"; };
 		1049F4E6A7755390156E5405 /* libPods-iBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B891D9E76DCF37B02CBECD32 /* Pods-iBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.release.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 				013E76AF239646E100279E18 /* Commom */,
 				013E76992396463100279E18 /* AppDelegate.h */,
 				013E769A2396463100279E18 /* AppDelegate.m */,
+				01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */,
+				01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */,
+				01BC9AAF2397DA480004F39B /* Post.h */,
+				01BC9AB02397DA480004F39B /* Post.m */,
 				013E769C2396463100279E18 /* ViewController.h */,
 				013E769D2396463100279E18 /* ViewController.m */,
 				013E769F2396463100279E18 /* Main.storyboard */,
@@ -192,8 +202,6 @@
 		013E76AF239646E100279E18 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
-				013E76B3239646E100279E18 /* NSString+Common.h */,
-				013E76C8239646E100279E18 /* NSString+Common.m */,
 				013E76C4239646E100279E18 /* TAddIndicatorView.h */,
 				013E76DA239646E100279E18 /* TAddIndicatorView.m */,
 				013E76D4239646E100279E18 /* THeader.h */,
@@ -208,6 +216,8 @@
 		013E76F62396480300279E18 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				013E76B3239646E100279E18 /* NSString+Common.h */,
+				013E76C8239646E100279E18 /* NSString+Common.m */,
 				013E770D2396480300279E18 /* NSArray+log.h */,
 				013E77232396480300279E18 /* NSArray+log.m */,
 				013E771B2396480300279E18 /* NSData+Extension.h */,
@@ -420,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				013E77352396480300279E18 /* NSString+PJR.m in Sources */,
+				01BC9AAE2397D99D0004F39B /* IGDemoViewController.m in Sources */,
 				013E773C2396480400279E18 /* NSArray+log.m in Sources */,
 				013E772D2396480300279E18 /* UIColor+MLPFlatColors.m in Sources */,
 				013E77332396480300279E18 /* UIView+NetTipView.m in Sources */,
@@ -431,6 +442,7 @@
 				013E76A92396463200279E18 /* main.m in Sources */,
 				013E77362396480300279E18 /* NSDate+Common.m in Sources */,
 				013E77342396480300279E18 /* UIView+DKExtension.m in Sources */,
+				01BC9AB12397DA480004F39B /* Post.m in Sources */,
 				013E773E2396480400279E18 /* UIImage+SyntheticIcon.m in Sources */,
 				013E77282396480300279E18 /* UIButton+Interval.m in Sources */,
 				013E769B2396463100279E18 /* AppDelegate.m in Sources */,

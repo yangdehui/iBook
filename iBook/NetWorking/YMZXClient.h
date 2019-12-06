@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-#define BaseURL @"http://101.201.72.32:80/"
-//#define BaseURL @"http://121.194.117.77:8800/"
+#define BaseURL @"http://novel.juhe.im/"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YMZXClient : NSObject
 
 +(instancetype)sharedClient;
+
+- (void)getCategories;
+
+- (void)getSubCategories;
 
 @end
 
