@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HBDNavigationController.h>
 
-@interface TNavigationController : UINavigationController
+@interface TNavigationController : HBDNavigationController
 
 @end

@@ -8,6 +8,7 @@
 
 #import "TTabBarController.h"
 #import "TNavigationController.h"
+#import "YHBookMallViewController.h"
 
 @implementation TTabBarItem
 @end
@@ -43,36 +44,31 @@
     TTabBarController *tbc = [[self alloc] init];
     tbc.tabBar.tintColor = UIColor.redColor;
     
-//    TTabBarItem *msgItem = [[TTabBarItem alloc] init];
-//    msgItem.title = @"曾聊";
-//    msgItem.selectedImage = [UIImage imageNamed:@"tabbar_message_s"];
-//    msgItem.normalImage = [UIImage imageNamed:@"tabbar_message"];
-//    msgItem.controller = [[TNavigationController alloc] initWithRootViewController:[[ConversationController alloc] init]];
-//
-//    TTabBarItem *contactItem = [[TTabBarItem alloc] init];
-//    contactItem.title = @"曾友";
-//    contactItem.selectedImage = [UIImage imageNamed:@"tabbar_contact_s"];
-//    contactItem.normalImage = [UIImage imageNamed:@"tabbar_contact"];
-//    NSInteger badge = YMFriendshipManager.sharedManager.unReadRequsetcount;
-//    contactItem.badgeValue = badge == 0 ? nil : @(badge).stringValue;
-//    YMContactViewController *CVC = [[UIStoryboard storyboardWithName:@"YMChat" bundle:nil] instantiateViewControllerWithIdentifier:@"YMContactViewController"];
-//    contactItem.controller = [[TNavigationController alloc] initWithRootViewController:CVC];
-//
-//    TTabBarItem *discoverItem = [[TTabBarItem alloc] init];
-//    discoverItem.title = @"发现";
-//    discoverItem.selectedImage = [UIImage imageNamed:@"tabbar_discover_s"];
-//    discoverItem.normalImage = [UIImage imageNamed:@"tabbar_discover"];
-//    discoverItem.controller = [[TNavigationController alloc] initWithRootViewController:[[DiscoverController alloc] init]];
-//
-//    TTabBarItem *myItem = [[TTabBarItem alloc] init];
-//    myItem.title = @"我";
-//    myItem.selectedImage = [UIImage imageNamed:@"tabbar_personal_s"];
-//    myItem.normalImage = [UIImage imageNamed:@"tabbar_personal"];
-//    myItem.controller = [[TNavigationController alloc] initWithRootViewController:[[PersonalController alloc] init]];
-//
-//    tbc.tabBarItems = @[msgItem, contactItem, discoverItem, myItem];
-//    // 未读数刷新同步
-//    [[IMConversationManager sharedInstance] asyncConversationList];
+    TTabBarItem *bookCaseItem = [[TTabBarItem alloc] init];
+    bookCaseItem.title = @"书架";
+    bookCaseItem.selectedImage = [UIImage imageNamed:@"tabbar_message_s"];
+    bookCaseItem.normalImage = [UIImage imageNamed:@"tabbar_message"];
+    bookCaseItem.controller = [[TNavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
+
+    TTabBarItem *bookMallItem = [[TTabBarItem alloc] init];
+    bookMallItem.title = @"书城";
+    bookMallItem.selectedImage = [UIImage imageNamed:@"tabbar_message_s"];
+    bookMallItem.normalImage = [UIImage imageNamed:@"tabbar_message"];
+    bookMallItem.controller = [[TNavigationController alloc] initWithRootViewController:[[YHBookMallViewController alloc] init]];
+
+    TTabBarItem *contactItem = [[TTabBarItem alloc] init];
+    contactItem.title = @"其他";
+    contactItem.selectedImage = [UIImage imageNamed:@"tabbar_message_s"];
+    contactItem.normalImage = [UIImage imageNamed:@"tabbar_message"];
+    contactItem.controller = [[TNavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
+
+    TTabBarItem *mineItem = [[TTabBarItem alloc] init];
+    mineItem.title = @"我的";
+    mineItem.selectedImage = [UIImage imageNamed:@"tabbar_message_s"];
+    mineItem.normalImage = [UIImage imageNamed:@"tabbar_message"];
+    mineItem.controller = [[TNavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
+
+    tbc.tabBarItems = @[bookCaseItem, bookMallItem, contactItem, mineItem];
     return tbc;
 }
 

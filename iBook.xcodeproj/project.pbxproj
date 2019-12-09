@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B9036239E0F360042A96C /* YHBookMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010B9035239E0F360042A96C /* YHBookMallViewController.m */; };
+		010B9039239E10E90042A96C /* YHBookMallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */; };
 		013E769B2396463100279E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769A2396463100279E18 /* AppDelegate.m */; };
 		013E769E2396463100279E18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769D2396463100279E18 /* ViewController.m */; };
 		013E76A12396463100279E18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013E769F2396463100279E18 /* Main.storyboard */; };
@@ -53,6 +55,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010B9034239E0F360042A96C /* YHBookMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookMallViewController.h; sourceTree = "<group>"; };
+		010B9035239E0F360042A96C /* YHBookMallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookMallViewController.m; sourceTree = "<group>"; };
+		010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookMallDetailViewController.h; sourceTree = "<group>"; };
+		010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookMallDetailViewController.m; sourceTree = "<group>"; };
 		013E76962396463100279E18 /* iBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013E76992396463100279E18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		013E769A2396463100279E18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				013E76AF239646E100279E18 /* Commom */,
 				013E76992396463100279E18 /* AppDelegate.h */,
 				013E769A2396463100279E18 /* AppDelegate.m */,
+				010B9034239E0F360042A96C /* YHBookMallViewController.h */,
+				010B9035239E0F360042A96C /* YHBookMallViewController.m */,
+				010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */,
+				010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */,
 				01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */,
 				01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */,
 				01BC9AAF2397DA480004F39B /* Post.h */,
@@ -451,6 +461,7 @@
 				013E772E2396480300279E18 /* NSData+Extension.m in Sources */,
 				013E77372396480400279E18 /* UIAlertController+YMAdd.m in Sources */,
 				0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */,
+				010B9036239E0F360042A96C /* YHBookMallViewController.m in Sources */,
 				013E77292396480300279E18 /* UIColor+RGBValues.m in Sources */,
 				013E773D2396480400279E18 /* UILabel+Common.m in Sources */,
 				013E773A2396480400279E18 /* UIButton+EnlargeEdge.m in Sources */,
@@ -466,6 +477,7 @@
 				013E77302396480300279E18 /* UIButton+Block.m in Sources */,
 				013E76ED239646E200279E18 /* NSString+Common.m in Sources */,
 				013E77312396480300279E18 /* UINavigationController+YM.m in Sources */,
+				010B9039239E10E90042A96C /* YHBookMallDetailViewController.m in Sources */,
 				013E77272396480300279E18 /* UIButton+ImagePosition.m in Sources */,
 				013E772F2396480300279E18 /* NSObject+CommonBlock.m in Sources */,
 			);

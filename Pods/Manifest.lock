@@ -14,9 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - HBDNavigationBar (1.7.2)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
@@ -43,7 +45,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FDFullscreenPopGesture
   - FMDB
+  - HBDNavigationBar (~> 1.7.2)
   - IGListKit (~> 4.0.0)
   - IQKeyboardManager
   - LCActionSheet
@@ -63,7 +67,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - FDFullscreenPopGesture
     - FMDB
+    - HBDNavigationBar
     - IGListDiffKit
     - IGListKit
     - IQKeyboardManager
@@ -83,7 +89,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HBDNavigationBar: b64331d6b3042c56e2c0b7fea1fd8e620a1b2872
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
@@ -101,6 +109,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 96acf152055fe25272b700f3aad711113eefe655
+PODFILE CHECKSUM: ffa494b9c1a5233d16d710f25a97988e5bbaef91
 
 COCOAPODS: 1.7.3

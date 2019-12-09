@@ -25,8 +25,8 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    self.navigationBar.tintColor = UIColor.redColor;
-
+    [self.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
