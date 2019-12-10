@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookMallDetailViewController : UIViewController
 
+- (instancetype)initWithLink:(NSString *)link;
 @end
 
 NS_ASSUME_NONNULL_END

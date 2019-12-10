@@ -16,7 +16,12 @@
 @implementation YHBookMallViewController
 
 - (NSArray<NSString *> *)titles {
-    return @[@"精选", @"男生", @"女生", @"出版"];
+    return @[@"精选", @"男生", @"女生", @"免费", @"新书", @"出版"];
+}
+
+- (NSArray<NSString *> *)links {
+    return @[@"https://h5.zhuishushenqi.com/v2/index3.html?id=e5fe6058afa449e4a8b9b3fb843c2bcd&posCode=B1&version=15&&platform=ios", @"https://h5.zhuishushenqi.com/v2/explore2.html?id=d9a25e6f474146c38f78688d14930a50&posCode=B1&version=15&platform=ios", @"https://h5.zhuishushenqi.com/v2/explore2.html?id=d322f092a8104c9784feff4680ef18c1&posCode=B1&version=15&platform=ios", @"https://h5.zhuishushenqi.com/v2/free.html?posCode=B1&version=15&platform=ios", @"https://h5.zhuishushenqi.com/v2/explore2.html?id=17c764e8aaa54d50bf59b0fd8373b400&posCode=B1&version=15&platform=ios",
+        @"https://h5.zhuishushenqi.com/v2/explore2.html?id=c593c40b08414ca5b9d9b28851f60de1&posCode=B1&version=15&platform=ios"];
 }
 
 - (instancetype)init {
@@ -26,18 +31,18 @@
         self.titleSizeSelected = 22.0;
         self.titleSizeNormal = 15;
         self.titleColorNormal = TEXT_COLOR_C;
+        self.titleFontName = @"Arial-BoldMT";
         self.titleColorSelected = UIColor.blackColor;
         self.showOnNavigationBar = true;
         self.progressHeight = 0;
-        self.progressViewWidths = @[@(20), @(30), @(20)];
+        self.progressViewWidths = @[@(20), @(20), @(20), @(20), @(20)];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:0.94
-                                                green:0.94 blue:0.96 alpha:1];
+    self.view.backgroundColor = kWhiteColor;
 }
 
 - (void)setNavigationBar {
@@ -49,11 +54,8 @@
 }
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-    NSArray *navArray = @[YHBookMallDetailViewController.new,
-                          YHBookMallDetailViewController.new,
-                          YHBookMallDetailViewController.new,
-                          YHBookMallDetailViewController.new];
-    return navArray[index];
+
+    return [[YHBookMallDetailViewController alloc] initWithLink:self.links[index]];
 }
 
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
@@ -68,7 +70,7 @@
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
 
-    return CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR);
+    return CGRectMake(0, 10, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR);
 }
 
 @end

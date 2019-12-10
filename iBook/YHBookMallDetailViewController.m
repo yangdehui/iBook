@@ -7,26 +7,62 @@
 //
 
 #import "YHBookMallDetailViewController.h"
+#import <WebKit/WebKit.h>
 
-@interface YHBookMallDetailViewController ()
+@interface YHBookMallDetailViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
+@property (nonatomic, strong) WKWebView *wkwebView;
 
+@property (nonatomic, strong) NSURL *link;
 @end
 
 @implementation YHBookMallDetailViewController
 
+- (instancetype)initWithLink:(NSString *)link {
+    
+    self = [super init];
+    if (self) {
+        self.link = [NSURL URLWithString:link];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    /// 这个类主要用来做native与JavaScript的交互管理
+    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+    WKPreferences *preference = [[WKPreferences alloc]init];
+    preference.javaScriptEnabled = YES;
+    preference.javaScriptCanOpenWindowsAutomatically = YES;
+    config.preferences = preference;
+    
+    self.wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR) configuration:config];
+    self.wkwebView.backgroundColor = kWhiteColor;
+    self.wkwebView.navigationDelegate = self;
+    self.wkwebView.UIDelegate = self;
+    self.wkwebView.allowsBackForwardNavigationGestures = YES;
+    [self.wkwebView loadRequest:[NSURLRequest requestWithURL:self.link]];
+    [self.view addSubview:self.wkwebView];
+    
+    [self.wkwebView.configuration.userContentController addScriptMessageHandler:self name:@"showMessage"];
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - WKScriptMessageHandler
+/// 通过接收JS传出消息的name进行捕捉的回调方法
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+    NSLog(@"");
+    if ([message.name isEqualToString:@"showMessage"]) {
+        
+        
+    }
+    
 }
-*/
+
+
+
+
 
 @end
