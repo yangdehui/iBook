@@ -43,6 +43,9 @@
 		013E773C2396480400279E18 /* NSArray+log.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E77232396480300279E18 /* NSArray+log.m */; };
 		013E773D2396480400279E18 /* UILabel+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E77242396480300279E18 /* UILabel+Common.m */; };
 		013E773E2396480400279E18 /* UIImage+SyntheticIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E77262396480300279E18 /* UIImage+SyntheticIcon.m */; };
+		0142B28C23A0DD8E003A757F /* YHWebQueryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */; };
+		0142B28F23A0EAC5003A757F /* YHBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */; };
+		0142B29223A0ECE4003A757F /* YHRankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B29123A0ECE4003A757F /* YHRankingViewController.m */; };
 		01608E529FC7BA1A8A8233C7 /* libPods-iBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1049F4E6A7755390156E5405 /* libPods-iBook.a */; };
 		0193F2F623965A3000A481B3 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2E823965A3000A481B3 /* NetworkHelper.m */; };
 		0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2EA23965A3000A481B3 /* WebCacheHelpler.m */; };
@@ -129,6 +132,12 @@
 		013E77402396480A00279E18 /* PublicMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicMacro.h; sourceTree = "<group>"; };
 		013E77412396480A00279E18 /* DebugMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugMarco.h; sourceTree = "<group>"; };
 		013E7742239648BB00279E18 /* iBookPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBookPrefixHeader.pch; sourceTree = "<group>"; };
+		0142B28A23A0DD8E003A757F /* YHWebQueryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHWebQueryModel.h; sourceTree = "<group>"; };
+		0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHWebQueryModel.m; sourceTree = "<group>"; };
+		0142B28D23A0EAC5003A757F /* YHBookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookDetailViewController.h; sourceTree = "<group>"; };
+		0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookDetailViewController.m; sourceTree = "<group>"; };
+		0142B29023A0ECE4003A757F /* YHRankingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRankingViewController.h; sourceTree = "<group>"; };
+		0142B29123A0ECE4003A757F /* YHRankingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHRankingViewController.m; sourceTree = "<group>"; };
 		0193F2E423965A3000A481B3 /* WebCacheHelpler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCacheHelpler.h; sourceTree = "<group>"; };
 		0193F2E523965A3000A481B3 /* YMJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMJSONResponseSerializer.h; sourceTree = "<group>"; };
 		0193F2E623965A3000A481B3 /* YMHTTPRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHTTPRequestSerializer.h; sourceTree = "<group>"; };
@@ -183,6 +192,9 @@
 		013E76982396463100279E18 /* iBook */ = {
 			isa = PBXGroup;
 			children = (
+				0142B28923A0DD24003A757F /* Model */,
+				0142B28823A0DD1D003A757F /* View */,
+				0142B28723A0DD0E003A757F /* Controller */,
 				0193F2E323965A3000A481B3 /* NetWorking */,
 				013E773F2396480A00279E18 /* Macro */,
 				013E76F62396480300279E18 /* Category */,
@@ -193,6 +205,10 @@
 				010B9035239E0F360042A96C /* YHBookMallViewController.m */,
 				010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */,
 				010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */,
+				0142B29023A0ECE4003A757F /* YHRankingViewController.h */,
+				0142B29123A0ECE4003A757F /* YHRankingViewController.m */,
+				0142B28D23A0EAC5003A757F /* YHBookDetailViewController.h */,
+				0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */,
 				01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */,
 				01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */,
 				01BC9AAF2397DA480004F39B /* Post.h */,
@@ -287,6 +303,29 @@
 				013E77412396480A00279E18 /* DebugMarco.h */,
 			);
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		0142B28723A0DD0E003A757F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0142B28823A0DD1D003A757F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0142B28923A0DD24003A757F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0142B28A23A0DD8E003A757F /* YHWebQueryModel.h */,
+				0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0193F2E323965A3000A481B3 /* NetWorking */ = {
@@ -441,6 +480,8 @@
 			files = (
 				013E77352396480300279E18 /* NSString+PJR.m in Sources */,
 				01BC9AAE2397D99D0004F39B /* IGDemoViewController.m in Sources */,
+				0142B29223A0ECE4003A757F /* YHRankingViewController.m in Sources */,
+				0142B28C23A0DD8E003A757F /* YHWebQueryModel.m in Sources */,
 				013E773C2396480400279E18 /* NSArray+log.m in Sources */,
 				013E772D2396480300279E18 /* UIColor+MLPFlatColors.m in Sources */,
 				013E77332396480300279E18 /* UIView+NetTipView.m in Sources */,
@@ -458,6 +499,7 @@
 				013E769B2396463100279E18 /* AppDelegate.m in Sources */,
 				013E77322396480300279E18 /* UIImage+Extension.m in Sources */,
 				0193F2FC23965A3000A481B3 /* YMJSONResponseSerializer.m in Sources */,
+				0142B28F23A0EAC5003A757F /* YHBookDetailViewController.m in Sources */,
 				013E772E2396480300279E18 /* NSData+Extension.m in Sources */,
 				013E77372396480400279E18 /* UIAlertController+YMAdd.m in Sources */,
 				0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */,
