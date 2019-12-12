@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010B9036239E0F360042A96C /* YHBookMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010B9035239E0F360042A96C /* YHBookMallViewController.m */; };
 		010B9039239E10E90042A96C /* YHBookMallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */; };
+		010F867123A26F3700300C23 /* YHBookInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F867023A26F3700300C23 /* YHBookInfoModel.m */; };
 		013E769B2396463100279E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769A2396463100279E18 /* AppDelegate.m */; };
 		013E769E2396463100279E18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769D2396463100279E18 /* ViewController.m */; };
 		013E76A12396463100279E18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013E769F2396463100279E18 /* Main.storyboard */; };
@@ -62,6 +63,8 @@
 		010B9035239E0F360042A96C /* YHBookMallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookMallViewController.m; sourceTree = "<group>"; };
 		010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookMallDetailViewController.h; sourceTree = "<group>"; };
 		010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookMallDetailViewController.m; sourceTree = "<group>"; };
+		010F866F23A26F3700300C23 /* YHBookInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoModel.h; sourceTree = "<group>"; };
+		010F867023A26F3700300C23 /* YHBookInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoModel.m; sourceTree = "<group>"; };
 		013E76962396463100279E18 /* iBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013E76992396463100279E18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		013E769A2396463100279E18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 			children = (
 				0142B28A23A0DD8E003A757F /* YHWebQueryModel.h */,
 				0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */,
+				010F866F23A26F3700300C23 /* YHBookInfoModel.h */,
+				010F867023A26F3700300C23 /* YHBookInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				013E76E5239646E200279E18 /* TNavigationController.m in Sources */,
 				013E77382396480400279E18 /* UIColor+Extension.m in Sources */,
 				013E76E6239646E200279E18 /* TTabBarController.m in Sources */,
+				010F867123A26F3700300C23 /* YHBookInfoModel.m in Sources */,
 				013E772A2396480300279E18 /* UIView+EmptyData.m in Sources */,
 				0193F2FD23965A3000A481B3 /* YMHTTPSessionManager.m in Sources */,
 				013E77302396480300279E18 /* UIButton+Block.m in Sources */,

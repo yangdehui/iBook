@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define BaseURL @"http://novel.juhe.im/"
+#define BaseURL @"http://api.zhuishushenqi.com"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)sharedClient;
 
-- (void)getCategories;
-
-- (void)getSubCategories;
+- (void)getBookInfoWithBookId:(NSString *)bookId success:(void (^)(NSString *string))success fail:(void (^)(NSError *error))fail;
 
 @end
 

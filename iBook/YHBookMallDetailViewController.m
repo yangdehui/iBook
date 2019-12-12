@@ -8,6 +8,7 @@
 
 #import "YHBookMallDetailViewController.h"
 #import "YHRankingViewController.h"
+#import "YHBookDetailViewController.h"
 #import "YHWebQueryModel.h"
 #import <WebKit/WebKit.h>
 
@@ -138,7 +139,8 @@
         switch (queryModel.pageType) {
             case YHPageType_BookDetail:
             {
-                
+                YHBookDetailViewController *bookDetailVc = [[YHBookDetailViewController alloc] initWithBookID:queryModel.bookId];
+                [self.navigationController pushViewController:bookDetailVc animated:YES];
             }
                 break;
                 

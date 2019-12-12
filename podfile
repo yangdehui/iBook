@@ -17,6 +17,5 @@ pod 'SCLAlertView-Objective-C'
 pod 'IQKeyboardManager'
 pod 'IGListKit', '~> 4.0.0'
 pod 'SDCycleScrollView','>= 1.80'
-pod 'FDFullscreenPopGesture'
 pod 'HBDNavigationBar', '~> 1.7.2'
 end
