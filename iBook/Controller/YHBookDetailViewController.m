@@ -35,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self.navigationController.navigationBar setTranslucent:YES];
+    self.hbd_barAlpha = 0;
     [self loadData];
 }
 
@@ -52,7 +54,8 @@
 }
 
 - (void)setSubViews {
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:UICollectionViewFlowLayout.new];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR) collectionViewLayout:UICollectionViewFlowLayout.new];
+    self.collectionView.backgroundColor = kWhiteColor;
     [self.view addSubview:self.collectionView];
     self.adapter = [[IGListAdapter alloc] initWithUpdater:IGListAdapterUpdater.new viewController:self];
     self.adapter.collectionView = self.collectionView;

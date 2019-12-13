@@ -10,6 +10,7 @@
 
 @interface YHBookHeaderCell ()
 @property (nonatomic, strong) UIImageView *maskImageView;
+@property (nonatomic, strong) UIVisualEffectView *effectView;
 @property (nonatomic, strong) UIImageView *coverImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *autherLabel;
@@ -37,6 +38,10 @@
     self.maskImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:self.maskImageView];
     
+    UIBlurEffect *blurEffect =[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    self.effectView =[[UIVisualEffectView alloc]initWithEffect:blurEffect];
+    [self.contentView addSubview:self.effectView];
+    
     self.coverImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:self.coverImageView];
 
@@ -55,7 +60,6 @@
     self.wordCountLabel.textColor = [UIColor colorWithRed:0.59 green:0.59 blue:0.57 alpha:1.0];
     self.wordCountLabel.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.wordCountLabel];
-    
 }
 
 - (void)layoutSubviews {
@@ -63,18 +67,19 @@
     
     CGRect bounds = self.contentView.bounds;
     CGFloat leftPadding = 8.0;
-    self.maskImageView.frame = CGRectMake(0, 0, bounds.size.width, 120);
-    self.coverImageView.frame = CGRectMake(leftPadding, bounds.size.height - 90, 65, 90);
+    self.maskImageView.frame = CGRectMake(0, 0, bounds.size.width, 150);
+    self.effectView.frame = self.maskImageView.frame;
+    self.coverImageView.frame = CGRectMake(leftPadding, bounds.size.height - NavBarHeight, 65, 100);
     
     CGFloat textMaxWidth = bounds.size.width - self.coverImageView.frame.size.width - leftPadding *2;
     CGSize titleSize = [self.titleLabel sizeThatFits:CGSizeMake(textMaxWidth, MAXFLOAT)];
-    self.titleLabel.frame = CGRectMake(CGRectGetMaxY(self.coverImageView.frame) + leftPadding, CGRectGetMinX(self.coverImageView.frame) + leftPadding, titleSize.width, titleSize.height);
+    self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.coverImageView.frame) + leftPadding, CGRectGetMinY(self.coverImageView.frame) + leftPadding, titleSize.width, titleSize.height);
     
     CGSize autherSize = [self.autherLabel sizeThatFits:CGSizeMake(textMaxWidth, MAXFLOAT)];
-    self.autherLabel.frame = CGRectMake(CGRectGetMaxX(self.coverImageView.frame) + leftPadding, CGRectGetMinY(self.titleLabel.frame) + leftPadding, autherSize.width, autherSize.height);
+    self.autherLabel.frame = CGRectMake(CGRectGetMaxX(self.coverImageView.frame) + leftPadding, CGRectGetMaxY(self.titleLabel.frame) + leftPadding, autherSize.width, autherSize.height);
 
     CGSize wordSize = [self.wordCountLabel sizeThatFits:CGSizeMake(textMaxWidth, MAXFLOAT)];
-    self.wordCountLabel.frame = CGRectMake(CGRectGetMaxX(self.coverImageView.frame) + leftPadding, CGRectGetMinY(self.autherLabel.frame) + leftPadding, wordSize.width, wordSize.height);
+    self.wordCountLabel.frame = CGRectMake(CGRectGetMaxX(self.coverImageView.frame) + leftPadding, CGRectGetMaxY(self.autherLabel.frame) + leftPadding, wordSize.width, wordSize.height);
     
 }
 
