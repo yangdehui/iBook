@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHBookInfoModel : NSObject
+@interface YHBookInfoModel : NSObject <IGListDiffable>
 
 /** 书籍ID*/
 @property (nonatomic, copy) NSString *bookId;
@@ -33,7 +33,23 @@ NS_ASSUME_NONNULL_BEGIN
 /** 总字数*/
 @property (nonatomic, assign) NSInteger wordCount;
 
+/** 长简介*/
+@property (nonatomic, copy) NSString *longIntro;
 
+/** 作者*/
+@property (nonatomic, copy) NSString *author;
+
+/** 父分类*/
+@property (nonatomic, copy) NSString *majorCate;
+
+/** 子分类*/
+@property (nonatomic, copy) NSString *minorCate;
+
+/** 书名*/
+@property (nonatomic, copy) NSString *title;
+
+/** 封面*/
+@property (nonatomic, copy) NSString *cover;
 
 
 @end

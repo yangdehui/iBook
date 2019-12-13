@@ -18,7 +18,7 @@
 @end
 
 @implementation YMZXClient
-+(instancetype)sharedClient{
++(instancetype)sharedClient {
     static YMZXClient *sharedClient;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -29,6 +29,18 @@
         sharedClient.manager.responseSerializer = YMJSONResponseSerializer.new;
     });
     return sharedClient;
+}
+
+- (void)getBookInfoWithBookId:(NSString *)bookId success:(void (^)(YHBookInfoModel * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
+    
+    NSString *api = [NSString stringWithFormat:@"/book/%@",bookId];
+    [self.manager GET:api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        YHBookInfoModel *model = [YHBookInfoModel modelWithJSON:responseObject];
+        !success ?: success(model);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 @end

@@ -54,8 +54,12 @@
 		0193F2FC23965A3000A481B3 /* YMJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F223965A3000A481B3 /* YMJSONResponseSerializer.m */; };
 		0193F2FD23965A3000A481B3 /* YMHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F323965A3000A481B3 /* YMHTTPSessionManager.m */; };
 		0193F2FE23965A3000A481B3 /* YMZXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2F423965A3000A481B3 /* YMZXClient.m */; };
-		01BC9AAE2397D99D0004F39B /* IGDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */; };
-		01BC9AB12397DA480004F39B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC9AB02397DA480004F39B /* Post.m */; };
+		01CDD64823A330D8004A8A80 /* YHBookInfoSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD64723A330D8004A8A80 /* YHBookInfoSectionController.m */; };
+		01CDD64B23A33371004A8A80 /* YHBookHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD64A23A33371004A8A80 /* YHBookHeaderCell.m */; };
+		01CDD65123A33522004A8A80 /* YHBookDirectoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65023A33522004A8A80 /* YHBookDirectoryCell.m */; };
+		01CDD65423A33539004A8A80 /* YHBookTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65323A33539004A8A80 /* YHBookTagsCell.m */; };
+		01CDD65823A366F6004A8A80 /* YHBookInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */; };
+		01CDD65C23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,10 +157,18 @@
 		0193F2F323965A3000A481B3 /* YMHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHTTPSessionManager.m; sourceTree = "<group>"; };
 		0193F2F423965A3000A481B3 /* YMZXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMZXClient.m; sourceTree = "<group>"; };
 		0193F2F523965A3000A481B3 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
-		01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IGDemoViewController.h; path = Commom/IGDemoViewController.h; sourceTree = "<group>"; };
-		01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IGDemoViewController.m; path = Commom/IGDemoViewController.m; sourceTree = "<group>"; };
-		01BC9AAF2397DA480004F39B /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		01BC9AB02397DA480004F39B /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		01CDD64623A330D8004A8A80 /* YHBookInfoSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoSectionController.h; sourceTree = "<group>"; };
+		01CDD64723A330D8004A8A80 /* YHBookInfoSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoSectionController.m; sourceTree = "<group>"; };
+		01CDD64923A33371004A8A80 /* YHBookHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookHeaderCell.h; sourceTree = "<group>"; };
+		01CDD64A23A33371004A8A80 /* YHBookHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookHeaderCell.m; sourceTree = "<group>"; };
+		01CDD64F23A33522004A8A80 /* YHBookDirectoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookDirectoryCell.h; sourceTree = "<group>"; };
+		01CDD65023A33522004A8A80 /* YHBookDirectoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookDirectoryCell.m; sourceTree = "<group>"; };
+		01CDD65223A33539004A8A80 /* YHBookTagsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookTagsCell.h; sourceTree = "<group>"; };
+		01CDD65323A33539004A8A80 /* YHBookTagsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookTagsCell.m; sourceTree = "<group>"; };
+		01CDD65623A366F6004A8A80 /* YHBookInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoManager.h; sourceTree = "<group>"; };
+		01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoManager.m; sourceTree = "<group>"; };
+		01CDD65A23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoHeaderSectionController.h; sourceTree = "<group>"; };
+		01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoHeaderSectionController.m; sourceTree = "<group>"; };
 		021D560209F3E3AA0729863C /* Pods-iBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.debug.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.debug.xcconfig"; sourceTree = "<group>"; };
 		1049F4E6A7755390156E5405 /* libPods-iBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B891D9E76DCF37B02CBECD32 /* Pods-iBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.release.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,27 +207,17 @@
 		013E76982396463100279E18 /* iBook */ = {
 			isa = PBXGroup;
 			children = (
-				0142B28923A0DD24003A757F /* Model */,
-				0142B28823A0DD1D003A757F /* View */,
-				0142B28723A0DD0E003A757F /* Controller */,
 				0193F2E323965A3000A481B3 /* NetWorking */,
 				013E773F2396480A00279E18 /* Macro */,
 				013E76F62396480300279E18 /* Category */,
 				013E76AF239646E100279E18 /* Commom */,
+				0142B28923A0DD24003A757F /* Model */,
+				0142B28823A0DD1D003A757F /* View */,
+				01CDD65523A366CA004A8A80 /* ViewModel */,
+				0142B28723A0DD0E003A757F /* Controller */,
+				01CDD65923A37DBE004A8A80 /* SectionController */,
 				013E76992396463100279E18 /* AppDelegate.h */,
 				013E769A2396463100279E18 /* AppDelegate.m */,
-				010B9034239E0F360042A96C /* YHBookMallViewController.h */,
-				010B9035239E0F360042A96C /* YHBookMallViewController.m */,
-				010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */,
-				010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */,
-				0142B29023A0ECE4003A757F /* YHRankingViewController.h */,
-				0142B29123A0ECE4003A757F /* YHRankingViewController.m */,
-				0142B28D23A0EAC5003A757F /* YHBookDetailViewController.h */,
-				0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */,
-				01BC9AAC2397D99D0004F39B /* IGDemoViewController.h */,
-				01BC9AAD2397D99D0004F39B /* IGDemoViewController.m */,
-				01BC9AAF2397DA480004F39B /* Post.h */,
-				01BC9AB02397DA480004F39B /* Post.m */,
 				013E769C2396463100279E18 /* ViewController.h */,
 				013E769D2396463100279E18 /* ViewController.m */,
 				013E769F2396463100279E18 /* Main.storyboard */,
@@ -311,6 +313,14 @@
 		0142B28723A0DD0E003A757F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				010B9034239E0F360042A96C /* YHBookMallViewController.h */,
+				010B9035239E0F360042A96C /* YHBookMallViewController.m */,
+				010B9037239E10E90042A96C /* YHBookMallDetailViewController.h */,
+				010B9038239E10E90042A96C /* YHBookMallDetailViewController.m */,
+				0142B29023A0ECE4003A757F /* YHRankingViewController.h */,
+				0142B29123A0ECE4003A757F /* YHRankingViewController.m */,
+				0142B28D23A0EAC5003A757F /* YHBookDetailViewController.h */,
+				0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +328,14 @@
 		0142B28823A0DD1D003A757F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01CDD64623A330D8004A8A80 /* YHBookInfoSectionController.h */,
+				01CDD64723A330D8004A8A80 /* YHBookInfoSectionController.m */,
+				01CDD64923A33371004A8A80 /* YHBookHeaderCell.h */,
+				01CDD64A23A33371004A8A80 /* YHBookHeaderCell.m */,
+				01CDD64F23A33522004A8A80 /* YHBookDirectoryCell.h */,
+				01CDD65023A33522004A8A80 /* YHBookDirectoryCell.m */,
+				01CDD65223A33539004A8A80 /* YHBookTagsCell.h */,
+				01CDD65323A33539004A8A80 /* YHBookTagsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +368,24 @@
 				0193F2F423965A3000A481B3 /* YMZXClient.m */,
 			);
 			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		01CDD65523A366CA004A8A80 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01CDD65623A366F6004A8A80 /* YHBookInfoManager.h */,
+				01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01CDD65923A37DBE004A8A80 /* SectionController */ = {
+			isa = PBXGroup;
+			children = (
+				01CDD65A23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.h */,
+				01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */,
+			);
+			path = SectionController;
 			sourceTree = "<group>";
 		};
 		492F6103598CA6DA2455B8D3 /* Pods */ = {
@@ -484,13 +520,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				013E77352396480300279E18 /* NSString+PJR.m in Sources */,
-				01BC9AAE2397D99D0004F39B /* IGDemoViewController.m in Sources */,
+				01CDD65823A366F6004A8A80 /* YHBookInfoManager.m in Sources */,
 				0142B29223A0ECE4003A757F /* YHRankingViewController.m in Sources */,
 				0142B28C23A0DD8E003A757F /* YHWebQueryModel.m in Sources */,
+				01CDD65C23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m in Sources */,
 				013E773C2396480400279E18 /* NSArray+log.m in Sources */,
 				013E772D2396480300279E18 /* UIColor+MLPFlatColors.m in Sources */,
+				01CDD64823A330D8004A8A80 /* YHBookInfoSectionController.m in Sources */,
 				013E77332396480300279E18 /* UIView+NetTipView.m in Sources */,
 				013E773B2396480400279E18 /* NSString+NSStringSizeWithFont.m in Sources */,
+				01CDD65423A33539004A8A80 /* YHBookTagsCell.m in Sources */,
 				0193F2FB23965A3000A481B3 /* YMHTTPRequestSerializer.m in Sources */,
 				013E772B2396480300279E18 /* NSMutableAttributedString+Attributes.m in Sources */,
 				013E769E2396463100279E18 /* ViewController.m in Sources */,
@@ -498,7 +537,6 @@
 				013E76A92396463200279E18 /* main.m in Sources */,
 				013E77362396480300279E18 /* NSDate+Common.m in Sources */,
 				013E77342396480300279E18 /* UIView+DKExtension.m in Sources */,
-				01BC9AB12397DA480004F39B /* Post.m in Sources */,
 				013E773E2396480400279E18 /* UIImage+SyntheticIcon.m in Sources */,
 				013E77282396480300279E18 /* UIButton+Interval.m in Sources */,
 				013E769B2396463100279E18 /* AppDelegate.m in Sources */,
@@ -521,9 +559,11 @@
 				013E76E6239646E200279E18 /* TTabBarController.m in Sources */,
 				010F867123A26F3700300C23 /* YHBookInfoModel.m in Sources */,
 				013E772A2396480300279E18 /* UIView+EmptyData.m in Sources */,
+				01CDD64B23A33371004A8A80 /* YHBookHeaderCell.m in Sources */,
 				0193F2FD23965A3000A481B3 /* YMHTTPSessionManager.m in Sources */,
 				013E77302396480300279E18 /* UIButton+Block.m in Sources */,
 				013E76ED239646E200279E18 /* NSString+Common.m in Sources */,
+				01CDD65123A33522004A8A80 /* YHBookDirectoryCell.m in Sources */,
 				013E77312396480300279E18 /* UINavigationController+YM.m in Sources */,
 				010B9039239E10E90042A96C /* YHBookMallDetailViewController.m in Sources */,
 				013E77272396480300279E18 /* UIButton+ImagePosition.m in Sources */,

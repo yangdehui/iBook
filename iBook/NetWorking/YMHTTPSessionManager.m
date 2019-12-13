@@ -17,10 +17,15 @@
                       success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
                       failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure{
     
-    void (^sblock)(NSURLSessionDataTask * task, YMResponse *response) = ^(NSURLSessionDataTask * task, YMResponse *response){
+//    void (^sblock)(NSURLSessionDataTask * task, YMResponse *response) = ^(NSURLSessionDataTask * task, YMResponse *response){
+//
+//        success(task, response);
+//    };
+    void (^sblock)(NSURLSessionDataTask * task, id response) = ^(NSURLSessionDataTask * task, id response){
         
         success(task, response);
     };
+
     void (^fblock)(NSURLSessionDataTask * task, NSError *error) = ^(NSURLSessionDataTask * task, NSError *error){
         if (error.code == -1004) {
             //未连接服务器

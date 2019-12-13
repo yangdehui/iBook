@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YHBookInfoModel.h"
 
 #define BaseURL @"http://api.zhuishushenqi.com"
 
@@ -16,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)sharedClient;
 
-- (void)getBookInfoWithBookId:(NSString *)bookId success:(void (^)(NSString *string))success fail:(void (^)(NSError *error))fail;
+- (void)getBookInfoWithBookId:(NSString *)bookId success:(void (^)(YHBookInfoModel *bookInfo))success fail:(void (^)(NSError *error))fail;
 
 @end
 

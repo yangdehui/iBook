@@ -23,6 +23,7 @@
 /** System*/
 #import "PublicMacro.h"
 #import "DebugMarco.h"
+#import "YMZXClient.h"
 
 /** Category*/
 #import "UIButton+Block.h"

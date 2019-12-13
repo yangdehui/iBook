@@ -38,9 +38,10 @@
     NSMutableDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&serializationError];
     
     if (responseObject) {
-        YMResponse *respones = [YMResponse modelWithJSON:responseObject];
-        
-        return respones;
+//        YMResponse *respones = [YMResponse modelWithJSON:responseObject];
+//
+//        return respones;
+        return responseObject;
     }else{
     
         *error = [NSError errorWithDomain:@"YMJSONResponseSerializerError" code:-1 userInfo:@{NSLocalizedDescriptionKey : @"响应序列化失败"}];
