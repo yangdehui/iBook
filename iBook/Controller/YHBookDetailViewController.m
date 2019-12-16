@@ -32,11 +32,15 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.navigationController.navigationBar setTranslucent:YES];
-    self.hbd_barAlpha = 0;
+    self.view.backgroundColor = kWhiteColor;
+    self.hbd_barHidden = YES;
     [self loadData];
 }
 
@@ -54,7 +58,9 @@
 }
 
 - (void)setSubViews {
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR) collectionViewLayout:UICollectionViewFlowLayout.new];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     self.collectionView.backgroundColor = kWhiteColor;
     [self.view addSubview:self.collectionView];
     self.adapter = [[IGListAdapter alloc] initWithUpdater:IGListAdapterUpdater.new viewController:self];
@@ -64,7 +70,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.collectionView.frame = self.view.bounds;
+    self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
 #pragma mark - IGListAdapterDataSource

@@ -14,20 +14,20 @@
 
 @implementation TNavigationController
 
-+(void)initialize{
-    
-    UINavigationBar *bar = [UINavigationBar appearance];
-    //bar 的背景颜色
-    bar.barTintColor=[UIColor whiteColor];
-}
+//+(void)initialize{
+//    
+//    UINavigationBar *bar = [UINavigationBar appearance];
+//    //bar 的背景颜色
+//    bar.barTintColor=[UIColor whiteColor];
+//}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
-    [self.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-}
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    self.view.backgroundColor = UIColor.whiteColor;
+//    [self.navigationBar setShadowImage:[UIImage new]];
+//    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {

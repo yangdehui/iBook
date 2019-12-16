@@ -69,7 +69,7 @@
     CGFloat leftPadding = 8.0;
     self.maskImageView.frame = CGRectMake(0, 0, bounds.size.width, 150);
     self.effectView.frame = self.maskImageView.frame;
-    self.coverImageView.frame = CGRectMake(leftPadding, bounds.size.height - NavBarHeight, 65, 100);
+    self.coverImageView.frame = CGRectMake(leftPadding *2, CGRectGetMaxY(self.maskImageView.frame) - 80, 65, 100);
     
     CGFloat textMaxWidth = bounds.size.width - self.coverImageView.frame.size.width - leftPadding *2;
     CGSize titleSize = [self.titleLabel sizeThatFits:CGSizeMake(textMaxWidth, MAXFLOAT)];

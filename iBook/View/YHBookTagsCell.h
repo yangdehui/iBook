@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookTagsCell : UICollectionViewCell
 
-@property (nonatomic, strong) YHBookInfoModel *tagsModel;
+@property (nonatomic, copy) NSArray *tagsArray;
 
 @end
 
