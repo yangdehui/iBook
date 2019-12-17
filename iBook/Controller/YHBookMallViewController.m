@@ -38,7 +38,7 @@
         self.progressViewWidths = @[@(20), @(20), @(20), @(20), @(20)];
     }
     return self;
-}
+} 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,14 +63,13 @@
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-    CGFloat leftMargin  = 0;
-    CGFloat originY     = 0;
-    return CGRectMake(leftMargin, originY, SCREEN_WIDTH - 2 * leftMargin, NavBarHeight);
+
+    return CGRectMake(0, 0, SCREEN_WIDTH, NavBarHeight);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
 
-    return CGRectMake(0, 10, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR);
+    return CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR);
 }
 
 @end

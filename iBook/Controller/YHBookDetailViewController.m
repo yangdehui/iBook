@@ -32,11 +32,19 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setTranslucent:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setTranslucent:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.navigationController.navigationBar setTranslucent:YES];
-    self.hbd_barAlpha = 0;
     [self loadData];
 }
 
