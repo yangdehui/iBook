@@ -43,4 +43,9 @@
     }];
 }
 
+- (void)getBookShortReviewWithBookId:(NSString *)bookId success:(void (^)(NSArray<YHBookReviewModel *> * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
+    
+    
+}
+
 @end

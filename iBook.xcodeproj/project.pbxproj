@@ -61,6 +61,7 @@
 		01CDD65123A33522004A8A80 /* YHBookDirectoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65023A33522004A8A80 /* YHBookDirectoryCell.m */; };
 		01CDD65823A366F6004A8A80 /* YHBookInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */; };
 		01CDD65C23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */; };
+		15C4A17223A926B1000C2AF8 /* YHBookReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C4A17123A926B1000C2AF8 /* YHBookReviewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +175,8 @@
 		01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoHeaderSectionController.m; sourceTree = "<group>"; };
 		021D560209F3E3AA0729863C /* Pods-iBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.debug.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.debug.xcconfig"; sourceTree = "<group>"; };
 		1049F4E6A7755390156E5405 /* libPods-iBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C4A17023A926B1000C2AF8 /* YHBookReviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookReviewModel.h; sourceTree = "<group>"; };
+		15C4A17123A926B1000C2AF8 /* YHBookReviewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookReviewModel.m; sourceTree = "<group>"; };
 		B891D9E76DCF37B02CBECD32 /* Pods-iBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.release.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +353,8 @@
 				0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */,
 				010F866F23A26F3700300C23 /* YHBookInfoModel.h */,
 				010F867023A26F3700300C23 /* YHBookInfoModel.m */,
+				15C4A17023A926B1000C2AF8 /* YHBookReviewModel.h */,
+				15C4A17123A926B1000C2AF8 /* YHBookReviewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				013E77342396480300279E18 /* UIView+DKExtension.m in Sources */,
 				013E773E2396480400279E18 /* UIImage+SyntheticIcon.m in Sources */,
 				013E77282396480300279E18 /* UIButton+Interval.m in Sources */,
+				15C4A17223A926B1000C2AF8 /* YHBookReviewModel.m in Sources */,
 				013E769B2396463100279E18 /* AppDelegate.m in Sources */,
 				013E77322396480300279E18 /* UIImage+Extension.m in Sources */,
 				0193F2FC23965A3000A481B3 /* YMJSONResponseSerializer.m in Sources */,
