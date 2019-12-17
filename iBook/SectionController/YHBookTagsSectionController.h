@@ -1,8 +1,8 @@
 //
-//  YHBookInfoSectionController.h
+//  YHBookTagsSectionController.h
 //  iBook
 //
-//  Created by zikeys on 2019/12/13.
+//  Created by zikeys on 2019/12/16.
 //  Copyright © 2019 zikeys. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHBookInfoSectionController : IGListSectionController
+@interface YHBookTagsSectionController : IGListSectionController
 
 @end
 

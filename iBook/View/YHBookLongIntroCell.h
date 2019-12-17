@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookLongIntroCell : UICollectionViewCell
 
-@property (nonatomic, strong) YHBookInfoModel *longIntro;
-
+- (void)setLongIntro:(YHBookHeaderViewModel *)longIntro;
+- (void)updateHeight:(BOOL)expanded;
 @end
 
 NS_ASSUME_NONNULL_END

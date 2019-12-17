@@ -31,8 +31,8 @@
 - (void)setupSubviews {
     
     self.longIntroLabel = [[UILabel alloc] init];
-    self.longIntroLabel.textColor = [UIColor colorWithRed:0.59 green:0.59 blue:0.57 alpha:1.0];
-    self.longIntroLabel.font = [UIFont systemFontOfSize:13];
+    self.longIntroLabel.textColor = TEXT_COLOR_A;
+    self.longIntroLabel.font = [UIFont systemFontOfSize:14];
     self.longIntroLabel.numberOfLines = 4;
     [self.contentView addSubview:self.longIntroLabel];
 }
@@ -48,9 +48,15 @@
     }];
 }
 
-- (void)setLongIntro:(YHBookInfoModel *)longIntro {
+- (void)setLongIntro:(YHBookHeaderViewModel *)longIntro {
     
     _longIntroLabel.text = longIntro.longIntro;
+    [_longIntroLabel setText:longIntro.longIntro lines:0 andLineSpacing:5 constrainedToSize:CGSizeMake(self.frame.size.width - 30, MAXFLOAT) andAttColor:0];
+}
+
+- (void)updateHeight:(BOOL)expanded {
+    
+    self.longIntroLabel.numberOfLines = expanded ? 0 : 4;
 }
 
 -(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{

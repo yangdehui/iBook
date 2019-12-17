@@ -29,8 +29,12 @@
     
     [YMZXClient.sharedClient getBookInfoWithBookId:_bookId success:^(YHBookInfoModel * _Nonnull bookInfo) {
         
-        NSArray *array = @[bookInfo];
+        NSArray *array = @[[[YHBookHeaderViewModel alloc] initWithBookInfo:bookInfo],
+                           [[YHBookTagsViewModel alloc] initWithBookInfo:bookInfo]];
         !success ?: success(array);
     } fail:fail];
 }
+
+
+
 @end

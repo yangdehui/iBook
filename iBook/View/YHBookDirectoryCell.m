@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIImageView *rightImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *descLabel;
+@property (nonatomic, strong) UILabel *lineLabel;
 @end
 
 @implementation YHBookDirectoryCell
@@ -39,17 +40,19 @@
     self.rightImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:self.rightImageView];
     
-    
     self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.textColor = [UIColor colorWithRed:0.59 green:0.59 blue:0.57 alpha:1.0];
-    self.titleLabel.font = [UIFont systemFontOfSize:18];
+    self.titleLabel.textColor = TEXT_COLOR_A;
+    self.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:self.titleLabel];
     
     self.descLabel = [[UILabel alloc] init];
-    self.descLabel.textColor = [UIColor colorWithRed:0.59 green:0.59 blue:0.57 alpha:1.0];
+    self.descLabel.textColor = TEXT_COLOR_C;
     self.descLabel.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.descLabel];
     
+    self.lineLabel = [[UILabel alloc] init];
+    self.lineLabel.backgroundColor = TEXT_COLOR_D;
+    [self.contentView addSubview:self.lineLabel];
 }
 
 - (void)layoutSubviews {
@@ -74,10 +77,15 @@
         make.right.mas_equalTo(self.contentView).mas_offset(-15);
         make.centerY.mas_equalTo(self.contentView);
     }];
+    [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView).mas_offset(15);
+        make.bottom.right.mas_equalTo(self.contentView);
+        make.height.mas_equalTo(0.5);
+    }];
     
 }
 
-- (void)setDirectoryModel:(YHBookInfoModel *)directoryModel {
+- (void)setDirectoryModel:(YHBookHeaderViewModel *)directoryModel {
     self.titleLabel.text = @"目录";
     self.descLabel.text = [NSString stringWithFormat:@"共%ld章",directoryModel.chaptersCount];
 }

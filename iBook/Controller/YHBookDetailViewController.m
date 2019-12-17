@@ -7,7 +7,8 @@
 //
 
 #import "YHBookDetailViewController.h"
-#import "YHBookInfoSectionController.h"
+#import "YHBookInfoHeaderSectionController.h"
+#import "YHBookTagsSectionController.h"
 #import "YHBookInfoManager.h"
 #import <IGListKit.h>
 
@@ -80,7 +81,12 @@
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    return [YHBookInfoSectionController new];
+    if ([object isKindOfClass:YHBookHeaderViewModel.class]) {
+        return [YHBookInfoHeaderSectionController new];
+    } else if ([object isKindOfClass:YHBookTagsViewModel.class]) {
+        return [YHBookTagsSectionController new];
+    }
+    return nil;
 }
 
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {

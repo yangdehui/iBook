@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookDirectoryCell : UICollectionViewCell
 
-@property (nonatomic, strong) YHBookInfoModel *directoryModel;
-
+- (void)setDirectoryModel:(YHBookHeaderViewModel *)directoryModel;
 @end
 
 NS_ASSUME_NONNULL_END
