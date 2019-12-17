@@ -64,12 +64,12 @@
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
 
-    return CGRectMake(0, 0, SCREEN_WIDTH, NavBarHeight);
+    return CGRectMake(0, 0, SCREEN_WIDTH, 44);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
 
-    return CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT_WITHOUTBAR);
+    return CGRectMake(0, kOriginY, SCREEN_WIDTH, SCREEN_HEIGHT - StatusBarHeight);
 }
 
 @end

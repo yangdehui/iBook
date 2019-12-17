@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookHeaderCell : UICollectionViewCell
 
-@property (nonatomic, strong) YHBookInfoModel *bookInfo;
+- (void)setHeaderInfo:(YHBookHeaderViewModel *)headerInfo;
 @end
 
 NS_ASSUME_NONNULL_END
