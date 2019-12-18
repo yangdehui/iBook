@@ -1,20 +1,20 @@
 //
-//  YHBookTagsSectionController.m
+//  YHBookInfoTagsSectionController.m
 //  iBook
 //
-//  Created by zikeys on 2019/12/16.
+//  Created by zikeys on 2019/12/18.
 //  Copyright © 2019 zikeys. All rights reserved.
 //
 
-#import "YHBookTagsSectionController.h"
+#import "YHBookInfoTagsSectionController.h"
 #import "YHBookTagCell.h"
 
-@interface YHBookTagsSectionController ()
+@interface YHBookInfoTagsSectionController ()
 @property (nonatomic, strong) YHBookTagsViewModel *tagsViewModel;
 
 @end
 
-@implementation YHBookTagsSectionController
+@implementation YHBookInfoTagsSectionController
 
 - (instancetype)init
 {
@@ -48,7 +48,7 @@
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    
+    return;
 }
 
 @end

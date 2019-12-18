@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getBookInfoWithBookId:(NSString *)bookId success:(void (^)(YHBookInfoModel *bookInfo))success fail:(void (^)(NSError *error))fail;
 
-- (void)getBookShortReviewWithBookId:(NSString *)bookId success:(void (^)(NSArray <YHBookReviewModel *>*array))success fail:(void (^)(NSError *error))fail;
+- (void)getBookShortReviewWithBookId:(NSString *)bookId pageCount:(NSInteger)pageCount success:(void (^)(YHBookReviewResponse *reviewModel))success fail:(void (^)(NSError *error))fail;
+
+- (void)getBooksWithRecommend:(NSString *)bookId success:(void (^)(NSArray <YHBookInfoModel *>*bookArray))success fail:(void (^)(NSError *error))fail;
 
 @end
 

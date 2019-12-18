@@ -162,21 +162,4 @@
 #define BG_GLOBAL_COLOR     UIColorFromRGB(0xffffff) ///白色
 #define BG_GLOBAL_COLOR_A   UIColorFromRGB(0xf7f7f7) ///一点点灰
 
-#pragma mark *** 侧滑按钮颜色 (红)深-->浅 ***
-
-//#define SWIPE_COLOR_A    RGB_COLOR(213,82,78)
-//#define SWIPE_COLOR_B    RGB_COLOR(218,108,104)
-//#define SWIPE_COLOR_C    RGB_COLOR(223,125,122)
-//#define SWIPE_COLOR_D    RGB_COLOR(227,142,139)
-#define SWIPE_COLOR_A    RGB(250, 62, 59)
-#define SWIPE_COLOR_B    RGB(200, 199, 204)
-#define SWIPE_COLOR_C    RGB(190, 189, 194)
-#define SWIPE_COLOR_D    RGB(180, 179, 184)
-
-#pragma mark - 服务机构主题色
-#define THEME_COLOR_SERVICE  RGB_COLOR(68,103,222)
-#pragma mark - 企业用户主题色
-//#define THEME_COLOR_USER     RGB_COLOR(96,204,163)
-#define THEME_COLOR_USER     RGB_COLOR(73,193,177)
-
 #endif /* PublicMacro_h */

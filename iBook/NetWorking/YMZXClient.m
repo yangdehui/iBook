@@ -39,13 +39,36 @@
         YHBookInfoModel *model = [YHBookInfoModel modelWithJSON:responseObject];
         !success ?: success(model);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        !fail ?: fail(error);
     }];
 }
 
-- (void)getBookShortReviewWithBookId:(NSString *)bookId success:(void (^)(NSArray<YHBookReviewModel *> * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
+- (void)getBookShortReviewWithBookId:(NSString *)bookId pageCount:(NSInteger)pageCount success:(void (^)(YHBookReviewResponse * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
+    NSInteger limitCount = pageCount == 0 ? 20 : 20*pageCount;
+    NSInteger startCount = pageCount == 0 ? 0 : 20*(pageCount - 1);
+    //sortType:(lastUpdated | newest | mostlike), //排序方式
+    NSString *api = [NSString stringWithFormat:@"/post/short-review?book=%@&sortType=mostlike&start=%ld&limit=%ld",bookId,startCount,limitCount];
+    [self.manager GET:api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        YHBookReviewResponse *reviewModel = [YHBookReviewResponse modelWithJSON:responseObject];
+        if (reviewModel.ok) {
+            !success ?: success(reviewModel);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        !fail ?: fail(error);
+    }];
+}
+
+- (void)getBooksWithRecommend:(NSString *)bookId success:(void (^)(NSArray<YHBookInfoModel *> * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
     
-    
+    NSString *api = [NSString stringWithFormat:@"/book/%@/recommend",bookId];
+    [self.manager GET:api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *array = [NSArray modelArrayWithClass:YHBookInfoModel.class json:responseObject];
+        !success ?: success(array);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        !fail ?: fail(error);
+    }];
 }
 
 @end

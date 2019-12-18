@@ -8,6 +8,55 @@
 
 #import "YHBookReviewModel.h"
 
-@implementation YHBookReviewModel
+@implementation YHBookReviewResponse
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"reviews" : @"docs"};
+}
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    
+    _reviews = [NSArray modelArrayWithClass:YHBookReviewModel.class json:dic[@"docs"]];
+    return YES;
+}
+#pragma mark - IGListDiffable
+- (id<NSObject>)diffIdentifier {
+    return self;
+}
+
+- (BOOL)isEqualToDiffableObject:(id)object {
+    return self == object;
+}
 
 @end
+
+
+@implementation YHBookReviewModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"reviewId" : @"_id",
+             @"userId" : @"author._id",
+             @"nickname" : @"author.nickname",
+             @"avatar" : @"author.avatar"};
+}
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    
+    return YES;
+}
+
+- (NSString *)avatar {
+    return [NSString stringWithFormat:@"http://api.zhuishushenqi.com%@",_avatar];
+}
+
+#pragma mark - IGListDiffable
+- (id<NSObject>)diffIdentifier {
+    return self;
+}
+
+- (BOOL)isEqualToDiffableObject:(id)object {
+    return self == object;
+}
+
+@end
+

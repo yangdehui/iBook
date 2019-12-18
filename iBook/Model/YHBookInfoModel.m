@@ -75,8 +75,8 @@
 
 - (UIColor *)tagColorWithIndex:(NSInteger)index {
     
-    UIColor *color = [@[UIColor.flatRedColor,
-                        UIColor.flatGreenColor,
+    UIColor *color = [@[UIColor.flatPurpleColor,
+                        UIColor.flatTealColor,
                         UIColor.flatBlueColor,
                         UIColor.flatYellowColor].mutableCopy objectAtIndex:index%4];
     return color;
