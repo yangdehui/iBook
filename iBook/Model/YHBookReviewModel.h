@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class YHBookReviewViewModel;
+@class YHBookReviewModel;
 @interface YHBookReviewResponse : NSObject<IGListDiffable>
 
 @property (nonatomic, assign) NSInteger today;
 
-@property (nonatomic, copy) NSArray <YHBookReviewViewModel *>*reviews;
+@property (nonatomic, copy) NSArray <YHBookReviewModel *>*reviews;
 
 @property (nonatomic, assign) BOOL ok;
 
 @end
 
-@interface YHBookReviewModel : NSObject<IGListDiffable>
+@interface YHBookReviewModel : NSObject
 
 @property (nonatomic, copy) NSString *reviewId;
 

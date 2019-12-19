@@ -64,8 +64,10 @@
     NSString *api = [NSString stringWithFormat:@"/book/%@/recommend",bookId];
     [self.manager GET:api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSArray *array = [NSArray modelArrayWithClass:YHBookInfoModel.class json:responseObject];
-        !success ?: success(array);
+        YHBookRecommendResponse *model = [YHBookRecommendResponse modelWithJSON:responseObject];
+        if (model.ok) {
+            !success ?: success(model.books);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         !fail ?: fail(error);
     }];

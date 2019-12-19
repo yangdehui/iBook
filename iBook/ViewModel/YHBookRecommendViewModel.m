@@ -10,12 +10,13 @@
 
 @implementation YHBookRecommendViewModel
 
-- (instancetype)initWithHeader:(NSString *)header footer:(NSString *)footer icon:(NSString *)icon books:(NSArray<YHBookInfoModel *> *)books {
+- (instancetype)initWithHeader:(NSString *)header footer:(NSString *)footer icon:(NSString *)icon books:(NSArray<YHBookInfoModel *> *)books sort:(NSInteger)sort {
     if (self = [super init]) {
         self.header = header;
         self.footer = footer;
         self.footerIcon = icon;
         self.bookInfoArray = books;
+        self.sort = sort;
     }
     return self;
 }

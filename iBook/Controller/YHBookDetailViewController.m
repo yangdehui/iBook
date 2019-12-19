@@ -10,6 +10,7 @@
 #import "YHBookInfoHeaderSectionController.h"
 #import "YHBookInfoTagsSectionController.h"
 #import "YHBookInfoReviewSectionController.h"
+#import "YHBookInfoRelateRecommendSectionController.h"
 #import "YHBookInfoManager.h"
 #import <IGListKit.h>
 
@@ -96,8 +97,10 @@
         return [YHBookInfoHeaderSectionController new];
     } else if ([object isKindOfClass:YHBookTagsViewModel.class]) {
         return [YHBookInfoTagsSectionController new];
-    } else if ([object isKindOfClass:YHBookReviewResponse.class]) {
+    } else if ([object isKindOfClass:YHBookReviewViewModel.class]) {
         return [YHBookInfoReviewSectionController new];
+    } else if ([object isKindOfClass:YHBookRecommendViewModel.class]) {
+        return [YHBookInfoRelateRecommendSectionController new];
     }
     return nil;
 }

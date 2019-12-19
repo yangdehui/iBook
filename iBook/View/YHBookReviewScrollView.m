@@ -123,7 +123,7 @@
     [(YHBookReviewScrollCell *)cell setBookReviewModel:[self.reviewArray objectAtIndex:index]];
 }
 
-- (void)setReviewViewModels:(NSArray<YHBookReviewViewModel *> *)reviewViewModels {
+- (void)setReviewViewModels:(NSArray<YHBookReviewModel *> *)reviewViewModels {
     _reviewArray = [reviewViewModels copy];
     self.imageURLStringsGroup = @[@"",@"",@"",@""];
 }

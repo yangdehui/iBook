@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHBookReviewViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookInfoReviewContentCell : UICollectionViewCell
-- (void)setReviewViewModels:(NSArray <YHBookReviewViewModel *>*)reviewViewModels;
+- (void)setReviewViewModels:(NSArray <YHBookReviewModel *>*)reviewViewModels;
 @end
 
 NS_ASSUME_NONNULL_END

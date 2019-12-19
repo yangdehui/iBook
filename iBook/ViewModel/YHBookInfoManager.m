@@ -36,9 +36,12 @@
     dispatch_group_enter(group);
     dispatch_group_enter(group);
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        if (info && review) {
+        if (info && review && recommend) {
             
-            !success ?: success(mutableArray);
+            NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"sort" ascending:YES];
+            
+            NSArray *newArr = [mutableArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+            !success ?: success(newArr);
         }else{
         
         }
@@ -46,8 +49,8 @@
     
     [YMZXClient.sharedClient getBookInfoWithBookId:_bookId success:^(YHBookInfoModel * _Nonnull bookInfo) {
         
-        [mutableArray insertObject:[[YHBookTagsViewModel alloc] initWithBookInfo:bookInfo] atIndex:0];
-        [mutableArray insertObject:[[YHBookHeaderViewModel alloc] initWithBookInfo:bookInfo] atIndex:0];
+        [mutableArray addObject:[[YHBookHeaderViewModel alloc] initWithBookInfo:bookInfo sort:0]];
+        [mutableArray addObject:[[YHBookTagsViewModel alloc] initWithBookInfo:bookInfo sort:1]];
         info = true;
         dispatch_group_leave(group);
     } fail:^(NSError * _Nonnull error) {
@@ -56,7 +59,7 @@
     
     [YMZXClient.sharedClient getBookShortReviewWithBookId:_bookId pageCount:1 success:^(YHBookReviewResponse * _Nonnull reviewModel) {
         
-        [mutableArray addObject:reviewModel];
+        [mutableArray addObject:[[YHBookReviewViewModel alloc] initWithLeftHeader:@"书友评论" rightHeader:@"写评论" rightIcon:@"" footerTitle:@"查看全部评论" reviews:reviewModel.reviews sort:2]];
         review = true;
         dispatch_group_leave(group);
     } fail:^(NSError * _Nonnull error) {
@@ -65,6 +68,7 @@
     
     [YMZXClient.sharedClient getBooksWithRecommend:_bookId success:^(NSArray<YHBookInfoModel *> * _Nonnull bookArray) {
         
+        [mutableArray addObject:[[YHBookRecommendViewModel alloc] initWithHeader:@"看过本书的人还在看" footer:@"换一换" icon:@"" books:bookArray sort:3]];
         recommend = true;
         dispatch_group_leave(group);
     } fail:^(NSError * _Nonnull error) {

@@ -19,14 +19,6 @@
     _reviews = [NSArray modelArrayWithClass:YHBookReviewModel.class json:dic[@"docs"]];
     return YES;
 }
-#pragma mark - IGListDiffable
-- (id<NSObject>)diffIdentifier {
-    return self;
-}
-
-- (BOOL)isEqualToDiffableObject:(id)object {
-    return self == object;
-}
 
 @end
 
@@ -47,15 +39,6 @@
 
 - (NSString *)avatar {
     return [NSString stringWithFormat:@"http://api.zhuishushenqi.com%@",_avatar];
-}
-
-#pragma mark - IGListDiffable
-- (id<NSObject>)diffIdentifier {
-    return self;
-}
-
-- (BOOL)isEqualToDiffableObject:(id)object {
-    return self == object;
 }
 
 @end

@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YHBookHeaderViewModel.h"
+#import "YHBookTagsViewModel.h"
+#import "YHBookReviewViewModel.h"
+#import "YHBookRecommendViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

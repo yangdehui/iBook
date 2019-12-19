@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class YHBookInfoModel;
+@interface YHBookRecommendResponse : NSObject
+
+@property (nonatomic, copy) NSArray <YHBookInfoModel *>*books;
+
+@property (nonatomic, assign) BOOL ok;
+
+@end
 
 @interface YHBookInfoModel : NSObject <IGListDiffable>
 
@@ -52,22 +60,5 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *cover;
 
 
-@end
-
-
-@interface YHBookHeaderViewModel : NSObject<IGListDiffable>
-@property (nonatomic, copy) NSString *coverUrl;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *author;
-@property (nonatomic, copy) NSString *longIntro;
-@property (nonatomic, assign) NSInteger wordCount;
-@property (nonatomic, assign) NSInteger chaptersCount;
-- (instancetype)initWithBookInfo:(YHBookInfoModel *)bookInfo;
-@end
-
-@interface YHBookTagsViewModel : NSObject<IGListDiffable>
-@property (nonatomic, copy) NSArray *tagsArray;
-- (UIColor *)tagColorWithIndex:(NSInteger)index;
-- (instancetype)initWithBookInfo:(YHBookInfoModel *)bookInfo;
 @end
 NS_ASSUME_NONNULL_END

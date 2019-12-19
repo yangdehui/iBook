@@ -8,6 +8,15 @@
 
 #import "YHBookInfoModel.h"
 
+@implementation YHBookRecommendResponse
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    
+    _books = [NSArray modelArrayWithClass:YHBookInfoModel.class json:dic[@"books"]];
+    return YES;
+}
+@end
+
 @implementation YHBookInfoModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
@@ -32,61 +41,6 @@
 
 - (BOOL)isEqualToDiffableObject:(id)object {
     // since the diff identifier returns self, object should only be compared with same instance
-    return self == object;
-}
-
-@end
-
-
-@implementation YHBookHeaderViewModel
-
-- (instancetype)initWithBookInfo:(YHBookInfoModel *)bookInfo {
-    self = [super init];
-    if (self) {
-        _coverUrl = [bookInfo.cover copy];
-        _title = [bookInfo.title copy];
-        _author = [bookInfo.author copy];
-        _longIntro = [bookInfo.longIntro copy];
-        _wordCount = bookInfo.wordCount;
-        _chaptersCount = bookInfo.chaptersCount;
-    }
-    return self;
-}
-#pragma mark - IGListDiffable
-- (id<NSObject>)diffIdentifier {
-    return self;
-}
-
-- (BOOL)isEqualToDiffableObject:(id)object {
-    return self == object;
-}
-@end
-
-
-@implementation YHBookTagsViewModel
-
-- (instancetype)initWithBookInfo:(YHBookInfoModel *)bookInfo {
-    self = [super init];
-    if (self) {
-        _tagsArray = [bookInfo.tags copy];
-    }
-    return self;
-}
-
-- (UIColor *)tagColorWithIndex:(NSInteger)index {
-    
-    UIColor *color = [@[UIColor.flatPurpleColor,
-                        UIColor.flatTealColor,
-                        UIColor.flatBlueColor,
-                        UIColor.flatYellowColor].mutableCopy objectAtIndex:index%4];
-    return color;
-}
-#pragma mark - IGListDiffable
-- (id<NSObject>)diffIdentifier {
-    return self;
-}
-
-- (BOOL)isEqualToDiffableObject:(id)object {
     return self == object;
 }
 

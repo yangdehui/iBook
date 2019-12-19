@@ -45,7 +45,7 @@
     }];
 }
 
-- (void)setReviewViewModels:(NSArray<YHBookReviewViewModel *> *)reviewViewModels {
+- (void)setReviewViewModels:(NSArray<YHBookReviewModel *> *)reviewViewModels {
     [self.reviewScrollView setReviewViewModels:reviewViewModels];
 }
 

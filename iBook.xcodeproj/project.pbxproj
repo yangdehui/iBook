@@ -13,9 +13,7 @@
 		011C9C0323A9C3DB00CAF150 /* YHBookReviewScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C0223A9C3DB00CAF150 /* YHBookReviewScrollView.m */; };
 		011C9C0623A9CE5A00CAF150 /* YHBookInfoTagsSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C0523A9CE5A00CAF150 /* YHBookInfoTagsSectionController.m */; };
 		011C9C0923A9CE7100CAF150 /* YHBookInfoReviewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C0823A9CE7100CAF150 /* YHBookInfoReviewSectionController.m */; };
-		011C9C0C23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C0B23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.m */; };
 		011C9C0F23AA000800CAF150 /* YHBookInfoReviewContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C0E23AA000800CAF150 /* YHBookInfoReviewContentCell.m */; };
-		011C9C1523AA222100CAF150 /* YHBookInfoReviewFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C1423AA222100CAF150 /* YHBookInfoReviewFooterCell.m */; };
 		011C9C1B23AA55A300CAF150 /* YHBookRecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C9C1A23AA55A300CAF150 /* YHBookRecommendViewModel.m */; };
 		013E769B2396463100279E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769A2396463100279E18 /* AppDelegate.m */; };
 		013E769E2396463100279E18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E769D2396463100279E18 /* ViewController.m */; };
@@ -54,6 +52,13 @@
 		0142B28C23A0DD8E003A757F /* YHWebQueryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B28B23A0DD8E003A757F /* YHWebQueryModel.m */; };
 		0142B28F23A0EAC5003A757F /* YHBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */; };
 		0142B29223A0ECE4003A757F /* YHRankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142B29123A0ECE4003A757F /* YHRankingViewController.m */; };
+		015072C823AB0F3800811C7A /* YHBookInfoSectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072C723AB0F3800811C7A /* YHBookInfoSectionHeaderCell.m */; };
+		015072CB23AB0FE200811C7A /* YHBookInfoSectionFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072CA23AB0FE200811C7A /* YHBookInfoSectionFooterCell.m */; };
+		015072CE23AB131700811C7A /* YHBookReviewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072CD23AB131700811C7A /* YHBookReviewViewModel.m */; };
+		015072D123AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072D023AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m */; };
+		015072D423AB254F00811C7A /* YHBookHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072D323AB254F00811C7A /* YHBookHeaderViewModel.m */; };
+		015072D723AB267600811C7A /* YHBookTagsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072D623AB267600811C7A /* YHBookTagsViewModel.m */; };
+		015072DA23AB3B4F00811C7A /* YHBookInfoCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015072D923AB3B4F00811C7A /* YHBookInfoCoverCell.m */; };
 		01608E529FC7BA1A8A8233C7 /* libPods-iBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1049F4E6A7755390156E5405 /* libPods-iBook.a */; };
 		0193F2F623965A3000A481B3 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2E823965A3000A481B3 /* NetworkHelper.m */; };
 		0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0193F2EA23965A3000A481B3 /* WebCacheHelpler.m */; };
@@ -83,12 +88,8 @@
 		011C9C0523A9CE5A00CAF150 /* YHBookInfoTagsSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoTagsSectionController.m; sourceTree = "<group>"; };
 		011C9C0723A9CE7100CAF150 /* YHBookInfoReviewSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoReviewSectionController.h; sourceTree = "<group>"; };
 		011C9C0823A9CE7100CAF150 /* YHBookInfoReviewSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoReviewSectionController.m; sourceTree = "<group>"; };
-		011C9C0A23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoReviewHeaderCell.h; sourceTree = "<group>"; };
-		011C9C0B23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoReviewHeaderCell.m; sourceTree = "<group>"; };
 		011C9C0D23AA000800CAF150 /* YHBookInfoReviewContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoReviewContentCell.h; sourceTree = "<group>"; };
 		011C9C0E23AA000800CAF150 /* YHBookInfoReviewContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoReviewContentCell.m; sourceTree = "<group>"; };
-		011C9C1323AA222100CAF150 /* YHBookInfoReviewFooterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoReviewFooterCell.h; sourceTree = "<group>"; };
-		011C9C1423AA222100CAF150 /* YHBookInfoReviewFooterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoReviewFooterCell.m; sourceTree = "<group>"; };
 		011C9C1923AA55A300CAF150 /* YHBookRecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookRecommendViewModel.h; sourceTree = "<group>"; };
 		011C9C1A23AA55A300CAF150 /* YHBookRecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookRecommendViewModel.m; sourceTree = "<group>"; };
 		013E76962396463100279E18 /* iBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +168,20 @@
 		0142B28E23A0EAC5003A757F /* YHBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookDetailViewController.m; sourceTree = "<group>"; };
 		0142B29023A0ECE4003A757F /* YHRankingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRankingViewController.h; sourceTree = "<group>"; };
 		0142B29123A0ECE4003A757F /* YHRankingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHRankingViewController.m; sourceTree = "<group>"; };
+		015072C623AB0F3800811C7A /* YHBookInfoSectionHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoSectionHeaderCell.h; sourceTree = "<group>"; };
+		015072C723AB0F3800811C7A /* YHBookInfoSectionHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoSectionHeaderCell.m; sourceTree = "<group>"; };
+		015072C923AB0FE200811C7A /* YHBookInfoSectionFooterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoSectionFooterCell.h; sourceTree = "<group>"; };
+		015072CA23AB0FE200811C7A /* YHBookInfoSectionFooterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoSectionFooterCell.m; sourceTree = "<group>"; };
+		015072CC23AB131700811C7A /* YHBookReviewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookReviewViewModel.h; sourceTree = "<group>"; };
+		015072CD23AB131700811C7A /* YHBookReviewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookReviewViewModel.m; sourceTree = "<group>"; };
+		015072CF23AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoRelateRecommendSectionController.h; sourceTree = "<group>"; };
+		015072D023AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoRelateRecommendSectionController.m; sourceTree = "<group>"; };
+		015072D223AB254F00811C7A /* YHBookHeaderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookHeaderViewModel.h; sourceTree = "<group>"; };
+		015072D323AB254F00811C7A /* YHBookHeaderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookHeaderViewModel.m; sourceTree = "<group>"; };
+		015072D523AB267600811C7A /* YHBookTagsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookTagsViewModel.h; sourceTree = "<group>"; };
+		015072D623AB267600811C7A /* YHBookTagsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookTagsViewModel.m; sourceTree = "<group>"; };
+		015072D823AB3B4F00811C7A /* YHBookInfoCoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoCoverCell.h; sourceTree = "<group>"; };
+		015072D923AB3B4F00811C7A /* YHBookInfoCoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoCoverCell.m; sourceTree = "<group>"; };
 		0193F2E423965A3000A481B3 /* WebCacheHelpler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCacheHelpler.h; sourceTree = "<group>"; };
 		0193F2E523965A3000A481B3 /* YMJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMJSONResponseSerializer.h; sourceTree = "<group>"; };
 		0193F2E623965A3000A481B3 /* YMHTTPRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHTTPRequestSerializer.h; sourceTree = "<group>"; };
@@ -362,12 +377,14 @@
 				019751F723A8C8CE009CCD4C /* YHBookTagCell.m */,
 				011C9C0123A9C3DB00CAF150 /* YHBookReviewScrollView.h */,
 				011C9C0223A9C3DB00CAF150 /* YHBookReviewScrollView.m */,
-				011C9C0A23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.h */,
-				011C9C0B23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.m */,
+				015072C623AB0F3800811C7A /* YHBookInfoSectionHeaderCell.h */,
+				015072C723AB0F3800811C7A /* YHBookInfoSectionHeaderCell.m */,
+				015072C923AB0FE200811C7A /* YHBookInfoSectionFooterCell.h */,
+				015072CA23AB0FE200811C7A /* YHBookInfoSectionFooterCell.m */,
 				011C9C0D23AA000800CAF150 /* YHBookInfoReviewContentCell.h */,
 				011C9C0E23AA000800CAF150 /* YHBookInfoReviewContentCell.m */,
-				011C9C1323AA222100CAF150 /* YHBookInfoReviewFooterCell.h */,
-				011C9C1423AA222100CAF150 /* YHBookInfoReviewFooterCell.m */,
+				015072D823AB3B4F00811C7A /* YHBookInfoCoverCell.h */,
+				015072D923AB3B4F00811C7A /* YHBookInfoCoverCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +426,12 @@
 			children = (
 				01CDD65623A366F6004A8A80 /* YHBookInfoManager.h */,
 				01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */,
+				015072D223AB254F00811C7A /* YHBookHeaderViewModel.h */,
+				015072D323AB254F00811C7A /* YHBookHeaderViewModel.m */,
+				015072D523AB267600811C7A /* YHBookTagsViewModel.h */,
+				015072D623AB267600811C7A /* YHBookTagsViewModel.m */,
+				015072CC23AB131700811C7A /* YHBookReviewViewModel.h */,
+				015072CD23AB131700811C7A /* YHBookReviewViewModel.m */,
 				011C9C1923AA55A300CAF150 /* YHBookRecommendViewModel.h */,
 				011C9C1A23AA55A300CAF150 /* YHBookRecommendViewModel.m */,
 			);
@@ -424,6 +447,8 @@
 				011C9C0523A9CE5A00CAF150 /* YHBookInfoTagsSectionController.m */,
 				011C9C0723A9CE7100CAF150 /* YHBookInfoReviewSectionController.h */,
 				011C9C0823A9CE7100CAF150 /* YHBookInfoReviewSectionController.m */,
+				015072CF23AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.h */,
+				015072D023AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -567,12 +592,14 @@
 				01CDD65C23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m in Sources */,
 				013E773C2396480400279E18 /* NSArray+log.m in Sources */,
 				013E772D2396480300279E18 /* UIColor+MLPFlatColors.m in Sources */,
+				015072CE23AB131700811C7A /* YHBookReviewViewModel.m in Sources */,
 				013E77332396480300279E18 /* UIView+NetTipView.m in Sources */,
 				013E773B2396480400279E18 /* NSString+NSStringSizeWithFont.m in Sources */,
 				0193F2FB23965A3000A481B3 /* YMHTTPRequestSerializer.m in Sources */,
 				013E772B2396480300279E18 /* NSMutableAttributedString+Attributes.m in Sources */,
 				013E769E2396463100279E18 /* ViewController.m in Sources */,
 				013E772C2396480300279E18 /* UILabel+ESLabelLineSpace.m in Sources */,
+				015072D123AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m in Sources */,
 				013E76A92396463200279E18 /* main.m in Sources */,
 				013E77362396480300279E18 /* NSDate+Common.m in Sources */,
 				013E77342396480300279E18 /* UIView+DKExtension.m in Sources */,
@@ -583,20 +610,23 @@
 				013E769B2396463100279E18 /* AppDelegate.m in Sources */,
 				013E77322396480300279E18 /* UIImage+Extension.m in Sources */,
 				011C9C0923A9CE7100CAF150 /* YHBookInfoReviewSectionController.m in Sources */,
-				011C9C0C23A9D02900CAF150 /* YHBookInfoReviewHeaderCell.m in Sources */,
 				0193F2FC23965A3000A481B3 /* YMJSONResponseSerializer.m in Sources */,
 				0142B28F23A0EAC5003A757F /* YHBookDetailViewController.m in Sources */,
 				013E772E2396480300279E18 /* NSData+Extension.m in Sources */,
+				015072DA23AB3B4F00811C7A /* YHBookInfoCoverCell.m in Sources */,
+				015072D723AB267600811C7A /* YHBookTagsViewModel.m in Sources */,
+				015072C823AB0F3800811C7A /* YHBookInfoSectionHeaderCell.m in Sources */,
 				013E77372396480400279E18 /* UIAlertController+YMAdd.m in Sources */,
 				011C9C0F23AA000800CAF150 /* YHBookInfoReviewContentCell.m in Sources */,
 				011C9C1B23AA55A300CAF150 /* YHBookRecommendViewModel.m in Sources */,
 				0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */,
 				010B9036239E0F360042A96C /* YHBookMallViewController.m in Sources */,
-				011C9C1523AA222100CAF150 /* YHBookInfoReviewFooterCell.m in Sources */,
 				013E77292396480300279E18 /* UIColor+RGBValues.m in Sources */,
 				013E773D2396480400279E18 /* UILabel+Common.m in Sources */,
 				013E773A2396480400279E18 /* UIButton+EnlargeEdge.m in Sources */,
 				0193F2F623965A3000A481B3 /* NetworkHelper.m in Sources */,
+				015072D423AB254F00811C7A /* YHBookHeaderViewModel.m in Sources */,
+				015072CB23AB0FE200811C7A /* YHBookInfoSectionFooterCell.m in Sources */,
 				0193F2FE23965A3000A481B3 /* YMZXClient.m in Sources */,
 				019751F823A8C8CE009CCD4C /* YHBookTagCell.m in Sources */,
 				013E76F4239646E200279E18 /* TAddIndicatorView.m in Sources */,

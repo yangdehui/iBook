@@ -1,19 +1,19 @@
 //
-//  YHBookInfoReviewFooterCell.m
+//  YHBookInfoSectionFooterCell.m
 //  iBook
 //
-//  Created by zikeys on 2019/12/18.
+//  Created by zikeys on 2019/12/19.
 //  Copyright © 2019 zikeys. All rights reserved.
 //
 
-#import "YHBookInfoReviewFooterCell.h"
+#import "YHBookInfoSectionFooterCell.h"
 
-@interface YHBookInfoReviewFooterCell ()
-@property (nonatomic, strong) UILabel *reviewLabel;
+@interface YHBookInfoSectionFooterCell ()
+@property (nonatomic, strong) UIButton *contentButton;
 @property (nonatomic, strong) UILabel *lineLabel;
 @end
 
-@implementation YHBookInfoReviewFooterCell
+@implementation YHBookInfoSectionFooterCell
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -31,12 +31,10 @@
 
 - (void)setupSubviews {
     
-    self.reviewLabel = [[UILabel alloc] init];
-    self.reviewLabel.font = [UIFont systemFontOfSize:14];
-    self.reviewLabel.textAlignment = NSTextAlignmentCenter;
-    self.reviewLabel.textColor = TEXT_COLOR_A;
-    self.reviewLabel.text = @"查看全部评论";
-    [self.contentView addSubview:self.reviewLabel];
+    self.contentButton = [[UIButton alloc] init];
+    self.contentButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.contentButton setTitleColor:TEXT_COLOR_A forState:UIControlStateNormal];
+    [self.contentView addSubview:self.contentButton];
     
     self.lineLabel = [[UILabel alloc] init];
     self.lineLabel.backgroundColor = TEXT_COLOR_D;
@@ -46,15 +44,22 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    CGRect rect = self.bounds;
     [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.contentView);
         make.height.mas_equalTo(0.5);
     }];
-    [self.reviewLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(self.contentView).mas_offset(15);
+    [self.contentButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(rect.size.width, 30)).priorityHigh();
+        make.top.bottom.mas_equalTo(self.contentView).inset(10);
         make.centerX.mas_equalTo(self.contentView);
     }];
+    
+}
 
+- (void)setContentButton:(NSString *)title icon:(NSString *)icon {
+    [self.contentButton setTitle:title forState:UIControlStateNormal];
+    [self.contentButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
 }
 
 -(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{

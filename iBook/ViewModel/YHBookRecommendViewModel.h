@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *footerIcon;
 @property (nonatomic, copy) NSArray <YHBookInfoModel *>*bookInfoArray;
 
-- (instancetype)initWithHeader:(NSString *)header footer:(NSString *)footer icon:(NSString *)icon books:(NSArray <YHBookInfoModel *>*)books;
+@property (nonatomic, assign) NSInteger sort;
+
+- (instancetype)initWithHeader:(NSString *)header footer:(NSString *)footer icon:(NSString *)icon books:(NSArray <YHBookInfoModel *>*)books sort:(NSInteger)sort;
 @end
 
 NS_ASSUME_NONNULL_END
