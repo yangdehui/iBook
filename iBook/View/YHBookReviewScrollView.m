@@ -28,6 +28,7 @@
     self.avatarImageView = [[UIImageView alloc] init];
     self.avatarImageView.layer.cornerRadius = 12.5;
     self.avatarImageView.layer.masksToBounds = YES;
+    self.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.avatarImageView];
     
     self.nicknameLabel = [[UILabel alloc] init];
@@ -83,7 +84,7 @@
 
 
 @interface YHBookReviewScrollView ()
-@property (nonatomic, strong) NSArray <YHBookReviewViewModel *>*reviewArray;
+@property (nonatomic, copy) NSArray <YHBookReviewModel *>*reviewArray;
 @end
 @implementation YHBookReviewScrollView
 
@@ -101,7 +102,7 @@
     return self;
 }
 
-- (instancetype)initScrollViewWithFrame:(CGRect)frame reviewArray:(NSArray<YHBookReviewViewModel *> *)reviewArray {
+- (instancetype)initScrollViewWithFrame:(CGRect)frame reviewArray:(NSArray<YHBookReviewModel *> *)reviewArray {
     self = [super initWithFrame:frame];
     if (self) {
         self.delegate = self;
@@ -125,7 +126,11 @@
 
 - (void)setReviewViewModels:(NSArray<YHBookReviewModel *> *)reviewViewModels {
     _reviewArray = [reviewViewModels copy];
-    self.imageURLStringsGroup = @[@"",@"",@"",@""];
+    NSArray *array = NSArray.array;
+    for (YHBookReviewModel *model in reviewViewModels) {
+        array = [array arrayByAddingObject:model.reviewId];
+    }
+    self.imageURLStringsGroup = array;
 }
 
 @end

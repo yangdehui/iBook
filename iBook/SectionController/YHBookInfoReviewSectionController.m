@@ -72,11 +72,11 @@
 #pragma mark - IGListSupplementaryViewSource
 
 -(NSArray<NSString *> *)supportedElementKinds{
-    return @[UICollectionElementKindSectionHeader];
+    return @[UICollectionElementKindSectionFooter];
 }
 
 -(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
-    UICollectionReusableView *view =[self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:UICollectionReusableView.class atIndex:index];
+    UICollectionReusableView *view =[self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter forSectionController:self class:UICollectionReusableView.class atIndex:index];
     view.backgroundColor = UIColor.flatWhiteColor;
     return view;
 }

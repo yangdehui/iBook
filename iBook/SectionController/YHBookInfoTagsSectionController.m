@@ -9,7 +9,7 @@
 #import "YHBookInfoTagsSectionController.h"
 #import "YHBookTagCell.h"
 
-@interface YHBookInfoTagsSectionController ()
+@interface YHBookInfoTagsSectionController ()<IGListSupplementaryViewSource>
 @property (nonatomic, strong) YHBookTagsViewModel *tagsViewModel;
 
 @end
@@ -23,6 +23,7 @@
         self.inset = UIEdgeInsetsMake(10, 15, 10, 10);
         self.minimumLineSpacing = 5;
         self.minimumInteritemSpacing = 5;
+        self.supplementaryViewSource = self;
     }
     return self;
 }
@@ -34,7 +35,8 @@
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-    return CGSizeMake(50, 20);
+//    CGFloat width = self.collectionContext.containerSize.width;
+    return CGSizeMake(60, 20);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
@@ -49,6 +51,22 @@
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
     return;
+}
+
+#pragma mark - IGListSupplementaryViewSource
+
+-(NSArray<NSString *> *)supportedElementKinds{
+    return @[UICollectionElementKindSectionFooter];
+}
+
+-(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
+    UICollectionReusableView *view=[self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter forSectionController:self class:UICollectionReusableView.class atIndex:index];
+    view.backgroundColor = UIColor.flatWhiteColor;
+    return view;
+}
+
+-(CGSize)sizeForSupplementaryViewOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
+    return CGSizeMake([self.collectionContext containerSize].width, 8);
 }
 
 @end

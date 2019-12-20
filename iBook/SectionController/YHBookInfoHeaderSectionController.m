@@ -12,48 +12,37 @@
 #import "YHBookLongIntroCell.h"
 #import "YHBookDirectoryCell.h"
 
-@interface YHBookInfoHeaderSectionController ()
+@interface YHBookInfoHeaderSectionController ()<IGListSupplementaryViewSource>
 @property (nonatomic, strong) YHBookHeaderViewModel *headerViewModel;
 @property (nonatomic, assign) BOOL expanded;
 
 @end
 @implementation YHBookInfoHeaderSectionController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.supplementaryViewSource = self;
+    }
+    return self;
+}
 #pragma mark - IGListSectionController Overrides
 
 - (NSInteger)numberOfItems {
-    return 3;
+    return 1;
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     const CGFloat width = self.collectionContext.containerSize.width;
-    CGFloat height = 50;
-    if (index == 0) {
-        height = 180;
-    } else if (index == 1) {
-        height = 60;
-    }
-    return CGSizeMake(width, height);
+    return CGSizeMake(width, 60);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    Class cellClass;
-    if (index == 0) {
-        cellClass = [YHBookHeaderCell class];
-    } else if (index == 1) {
-        cellClass = [YHBookLongIntroCell class];
-    }else if (index == 2) {
-        cellClass = [YHBookDirectoryCell class];
-    }
-    id cell = [self.collectionContext dequeueReusableCellOfClass:cellClass forSectionController:self atIndex:index];
-    if ([cell isKindOfClass:[YHBookHeaderCell class]]) {
-        [(YHBookHeaderCell *)cell setHeaderInfo:_headerViewModel];
-    }else if ([cell isKindOfClass:[YHBookLongIntroCell class]]) {
-        [(YHBookLongIntroCell *)cell setLongIntro:_headerViewModel];
-        [(YHBookLongIntroCell *)cell updateHeight:_expanded];
-    }else if ([cell isKindOfClass:[YHBookDirectoryCell class]]) {
-        [(YHBookDirectoryCell *)cell setDirectoryModel:_headerViewModel];
-    }
+
+    YHBookLongIntroCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookLongIntroCell.class forSectionController:self atIndex:index];
+    [cell setLongIntro:_headerViewModel];
+    [cell updateHeight:_expanded];
     return cell;
 }
 
@@ -62,14 +51,41 @@
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    if (index == 1) {
-        _expanded = !_expanded;
-        [self.collectionContext performBatchAnimated:false updates:^(id<IGListBatchContext>  _Nonnull batchContext) {
-            [batchContext reloadInSectionController:self atIndexes:[NSIndexSet indexSetWithIndex:index]];
-        } completion:^(BOOL finished) {
-            
-        }];
+    _expanded = !_expanded;
+    [self.collectionContext performBatchAnimated:false updates:^(id<IGListBatchContext>  _Nonnull batchContext) {
+        [batchContext reloadInSectionController:self atIndexes:[NSIndexSet indexSetWithIndex:0]];
+    } completion:nil];
+//    [self.collectionContext invalidateLayoutForSectionController:self completion:nil];
+}
+
+#pragma mark - IGListSupplementaryViewSource
+
+-(NSArray<NSString *> *)supportedElementKinds{
+    return @[UICollectionElementKindSectionHeader, UICollectionElementKindSectionFooter];
+}
+
+-(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
+    UICollectionReusableView *view = nil;
+    if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:YHBookHeaderCell.class atIndex:index];
+        [(YHBookHeaderCell *)view setHeaderInfo:_headerViewModel];
     }
+    if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter forSectionController:self class:YHBookDirectoryCell.class atIndex:index];
+        [(YHBookDirectoryCell *)view setDirectoryModel:_headerViewModel];
+    }
+    return view;
+}
+
+-(CGSize)sizeForSupplementaryViewOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
+    CGFloat height = 0;
+    if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+        height = 180;
+    }
+    if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+        height = 50;
+    }
+    return CGSizeMake([self.collectionContext containerSize].width, height);
 }
 
 @end

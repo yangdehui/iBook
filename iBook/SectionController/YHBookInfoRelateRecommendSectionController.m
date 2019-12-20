@@ -23,7 +23,9 @@
     self = [super init];
     if (self) {
         self.supplementaryViewSource = self;
-//        self.inset = UIEdgeInsetsMake(0, 7.5, 0, 7.5);
+        self.inset = UIEdgeInsetsMake(0, 15, 10, 15);
+        self.minimumInteritemSpacing = 10;
+        self.minimumLineSpacing = 10;
     }
     return self;
 }
@@ -31,38 +33,18 @@
 #pragma mark - IGListSectionController Overrides
 
 - (NSInteger)numberOfItems {
-    return 10;
+    return 8;
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     const CGFloat width = self.collectionContext.containerSize.width;
-    CGSize size = CGSizeZero;
-    if (index == 0 || index == 9) {
-        size = CGSizeMake(width, 60);
-    } else {
-        size = CGSizeMake(floor(width / 4), 150);
-    }
+    CGSize size = CGSizeMake(floor((width - 60) / 4), 160);
     return size;
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    Class cellClass;
-    if (index == 0) {
-        cellClass = [YHBookInfoSectionHeaderCell class];
-    } else if (index == 9) {
-        cellClass = [YHBookInfoSectionFooterCell class];
-    } else {
-        cellClass = [YHBookInfoCoverCell class];
-    }
-    id cell = [self.collectionContext dequeueReusableCellOfClass:cellClass forSectionController:self atIndex:index];
-    if ([cell isKindOfClass:[YHBookInfoSectionHeaderCell class]]) {
-        [(YHBookInfoSectionHeaderCell *)cell setLeftTitle:_recommendViewModel.header];
-    }else if ([cell isKindOfClass:[YHBookInfoCoverCell class]]) {
-        [(YHBookInfoCoverCell *)cell setBookInfoCover:_recommendViewModel.bookInfoArray[index - 1]];
-    }
-    else if ([cell isKindOfClass:[YHBookInfoSectionFooterCell class]]) {
-        [(YHBookInfoSectionFooterCell *)cell setContentButton:_recommendViewModel.footer icon:_recommendViewModel.footerIcon];
-    }
+    YHBookInfoCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoCoverCell.class forSectionController:self atIndex:index];
+    [cell setBookInfoCover:_recommendViewModel.bookInfoArray[index]];
     return cell;
 }
 
@@ -77,16 +59,23 @@
 #pragma mark - IGListSupplementaryViewSource
 
 -(NSArray<NSString *> *)supportedElementKinds{
-    return @[UICollectionElementKindSectionHeader];
+    return @[UICollectionElementKindSectionHeader,UICollectionElementKindSectionFooter];
 }
 
 -(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
-    UICollectionReusableView *view =[self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:UICollectionReusableView.class atIndex:index];
-    view.backgroundColor = UIColor.flatWhiteColor;
+    UICollectionReusableView *view = nil;
+    if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:YHBookInfoSectionHeaderCell.class atIndex:index];
+        [(YHBookInfoSectionHeaderCell *)view setLeftTitle:_recommendViewModel.header];
+        [(YHBookInfoSectionHeaderCell *)view setLineHidden];
+    } else if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter forSectionController:self class:YHBookInfoSectionFooterCell.class atIndex:index];
+        [(YHBookInfoSectionFooterCell *)view setContentButton:_recommendViewModel.footer icon:_recommendViewModel.footerIcon];
+    }
     return view;
 }
 
 -(CGSize)sizeForSupplementaryViewOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
-    return CGSizeMake([self.collectionContext containerSize].width, 8);
+    return CGSizeMake([self.collectionContext containerSize].width, 50);
 }
 @end

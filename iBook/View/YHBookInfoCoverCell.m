@@ -33,6 +33,7 @@
 - (void)setupSubviews {
     
     self.coverImageView = [[UIImageView alloc] init];
+    self.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.coverImageView];
     
     self.titleLabel = [[UILabel alloc] init];
@@ -51,15 +52,15 @@
 
     CGRect rect = self.bounds;
     [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(rect.size.width, 100)).priorityHigh();
-        make.top.left.right.mas_equalTo(self.contentView);
+        make.size.mas_equalTo(CGSizeMake(rect.size.width, 110 * KIphoneWH)).priorityHigh();
+        make.top.centerX.mas_equalTo(self.contentView);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.coverImageView.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(self.coverImageView.mas_bottom).mas_offset(8);
         make.left.right.mas_equalTo(self.coverImageView);
     }];
     [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(8);
         make.left.right.mas_equalTo(self.coverImageView);
         make.bottom.mas_equalTo(self.contentView);
     }];
@@ -78,7 +79,6 @@
     CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
     CGRect newFrame = layoutAttributes.frame;
     newFrame.size.height = ceil(size.height);
-    newFrame.size.width = ceil(size.width);
     layoutAttributes.frame = newFrame;
     return layoutAttributes;
 }

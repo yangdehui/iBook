@@ -14,7 +14,7 @@
 #import "YHBookInfoManager.h"
 #import <IGListKit.h>
 
-@interface YHBookDetailViewController () <IGListAdapterDataSource>
+@interface YHBookDetailViewController () <IGListAdapterDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, copy) NSString *bookId;
 
@@ -74,11 +74,13 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.collectionView.bounces = false;
     self.collectionView.backgroundColor = kWhiteColor;
     [self.view addSubview:self.collectionView];
     self.adapter = [[IGListAdapter alloc] initWithUpdater:IGListAdapterUpdater.new viewController:self];
     self.adapter.collectionView = self.collectionView;
     self.adapter.dataSource = self;
+    
 }
 
 - (void)viewDidLayoutSubviews {

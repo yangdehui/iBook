@@ -44,6 +44,7 @@
     [self.contentView addSubview:self.effectView];
     
     self.coverImageView = [[UIImageView alloc] init];
+    self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.coverImageView];
 
     self.titleLabel = [[UILabel alloc] init];

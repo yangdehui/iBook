@@ -35,9 +35,11 @@
 - (void)setupSubviews {
     
     self.leftImageView = [[UIImageView alloc] init];
+    self.leftImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.leftImageView];
     
     self.rightImageView = [[UIImageView alloc] init];
+    self.rightImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.rightImageView];
     
     self.titleLabel = [[UILabel alloc] init];

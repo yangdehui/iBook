@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookReviewScrollView : SDCycleScrollView<SDCycleScrollViewDelegate>
 
-- (instancetype)initScrollViewWithFrame:(CGRect)frame reviewArray:(NSArray <YHBookReviewViewModel *>*)reviewArray;
+- (instancetype)initScrollViewWithFrame:(CGRect)frame reviewArray:(NSArray <YHBookReviewModel *>*)reviewArray;
 - (void)setReviewViewModels:(NSArray <YHBookReviewModel *>*)reviewViewModels;
 @end
 

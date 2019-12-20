@@ -40,13 +40,13 @@
     [self.contentView addSubview:self.separatorLabel];
     
     self.leftLabel = [[UILabel alloc] init];
-    self.leftLabel.font = [UIFont systemFontOfSize:13];
-    self.leftLabel.textColor = TEXT_COLOR_B;
+    self.leftLabel.font = [UIFont systemFontOfSize:14];
+    self.leftLabel.textColor = TEXT_COLOR_A;
     [self.contentView addSubview:self.leftLabel];
     
     self.rightButton = [[UIButton alloc] init];
     [self.rightButton setTitleColor:UIColor.flatGreenColor forState:UIControlStateNormal];
-    [self.rightButton.titleLabel setFont:[UIFont systemFontOfSize:9]];
+    [self.rightButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [self.contentView addSubview:self.rightButton];
     
     self.lineLabel = [[UILabel alloc] init];
@@ -68,7 +68,7 @@
     }];
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(60, 30));
-        make.right.mas_equalTo(self.contentView).mas_offset(10);
+        make.right.mas_equalTo(self.contentView).mas_offset(-10);
         make.centerY.mas_equalTo(self.contentView);
     }];
     [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,6 +85,10 @@
 - (void)setRightButton:(NSString *)title icon:(NSString *)icon {
     [self.rightButton setTitle:title forState:UIControlStateNormal];
     [self.rightButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+}
+
+- (void)setLineHidden {
+    self.lineLabel.hidden = YES;
 }
 
 -(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
