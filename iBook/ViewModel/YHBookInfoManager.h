@@ -11,6 +11,7 @@
 #import "YHBookTagsViewModel.h"
 #import "YHBookReviewViewModel.h"
 #import "YHBookRecommendViewModel.h"
+#import "YHAuthorBooksViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

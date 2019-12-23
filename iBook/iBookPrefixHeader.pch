@@ -32,5 +32,6 @@
 #import "UIImage+ImageEffects.h"
 #import "UIColor+MLPFlatColors.h"
 #import "UILabel+ESLabelLineSpace.h"
+#import "UIButton+ImagePosition.h"
 
 #endif /* iBookPrefixHeader_pch */

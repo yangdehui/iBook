@@ -57,9 +57,10 @@
     
 }
 
-- (void)setContentButton:(NSString *)title icon:(NSString *)icon {
+- (void)setContentButton:(NSString *)title icon:(NSString *)icon imagePosition:(imagePosition)imagePosition {
     [self.contentButton setTitle:title forState:UIControlStateNormal];
     [self.contentButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+    [self.contentButton setImagePosition:imagePosition spacing:5];
 }
 
 -(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{

@@ -56,7 +56,7 @@
         [(YHBookInfoReviewContentCell *)cell setUserInteractionEnabled:false];
     }
     else if ([cell isKindOfClass:[YHBookInfoSectionFooterCell class]]) {
-        [(YHBookInfoSectionFooterCell *)cell setContentButton:_reviewModel.footerTitle icon:@""];
+        [(YHBookInfoSectionFooterCell *)cell setContentButton:_reviewModel.footerTitle icon:@"" imagePosition:imagePositionLeft];
     }
     return cell;
 }

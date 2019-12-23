@@ -1,23 +1,21 @@
 //
-//  YHBookInfoRelateRecommendSectionController.m
+//  YHBookInfoAuthorBooksSectionController.m
 //  iBook
 //
-//  Created by zikeys on 2019/12/19.
+//  Created by zikeys on 2019/12/23.
 //  Copyright © 2019 zikeys. All rights reserved.
 //
 
-#import "YHBookInfoRelateRecommendSectionController.h"
+#import "YHBookInfoAuthorBooksSectionController.h"
 #import "YHBookInfoSectionHeaderCell.h"
 #import "YHBookInfoCoverCell.h"
-#import "YHBookInfoSectionFooterCell.h"
 #import "YHBookDetailViewController.h"
 
-@interface YHBookInfoRelateRecommendSectionController ()<IGListSupplementaryViewSource>
-@property (nonatomic, strong) YHBookRecommendViewModel *recommendViewModel;
-
+@interface YHBookInfoAuthorBooksSectionController ()<IGListSupplementaryViewSource>
+@property (nonatomic, strong) YHAuthorBooksViewModel *authorBooksViewModel;
 @end
 
-@implementation YHBookInfoRelateRecommendSectionController
+@implementation YHBookInfoAuthorBooksSectionController
 
 - (instancetype)init
 {
@@ -34,7 +32,7 @@
 #pragma mark - IGListSectionController Overrides
 
 - (NSInteger)numberOfItems {
-    return 8;
+    return _authorBooksViewModel.bookInfoArray.count;
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
@@ -45,16 +43,16 @@
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
     YHBookInfoCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoCoverCell.class forSectionController:self atIndex:index];
-    [cell setBookInfoCover:_recommendViewModel.bookInfoArray[index]];
+    [cell setBookInfoCover:_authorBooksViewModel.bookInfoArray[index]];
     return cell;
 }
 
 - (void)didUpdateToObject:(id)object {
-    _recommendViewModel = object;
+    _authorBooksViewModel = object;
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    YHBookInfoModel *bookInfo = _recommendViewModel.bookInfoArray[index];
+    YHBookInfoModel *bookInfo = _authorBooksViewModel.bookInfoArray[index];
     YHBookDetailViewController *bookDetailVC = [[YHBookDetailViewController alloc] initWithBookID:bookInfo.bookId];
     [self.viewController.navigationController pushViewController:bookDetailVC animated:true];
 }
@@ -62,19 +60,12 @@
 #pragma mark - IGListSupplementaryViewSource
 
 -(NSArray<NSString *> *)supportedElementKinds{
-    return @[UICollectionElementKindSectionHeader,UICollectionElementKindSectionFooter];
+    return @[UICollectionElementKindSectionHeader];
 }
 
 -(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
-    UICollectionReusableView *view = nil;
-    if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:YHBookInfoSectionHeaderCell.class atIndex:index];
-        [(YHBookInfoSectionHeaderCell *)view setLeftTitle:_recommendViewModel.header];
-        [(YHBookInfoSectionHeaderCell *)view setLineHidden];
-    } else if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
-        view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter forSectionController:self class:YHBookInfoSectionFooterCell.class atIndex:index];
-        [(YHBookInfoSectionFooterCell *)view setContentButton:_recommendViewModel.footer icon:_recommendViewModel.footerIcon imagePosition:imagePositionRight];
-    }
+    YHBookInfoSectionHeaderCell *view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:YHBookInfoSectionHeaderCell.class atIndex:index];
+    [view setLeftTitle:_authorBooksViewModel.header];
     return view;
 }
 

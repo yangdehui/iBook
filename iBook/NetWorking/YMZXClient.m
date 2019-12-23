@@ -73,4 +73,18 @@
     }];
 }
 
+- (void)getAuthorBooksWith:(NSString *)author success:(void (^)(NSArray<YHBookInfoModel *> * _Nonnull))success fail:(void (^)(NSError * _Nonnull))fail {
+    
+    NSString *api = [NSString stringWithFormat:@"/book/accurate-search?author=%@",[author stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    [self.manager GET:api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        YHBookRecommendResponse *model = [YHBookRecommendResponse modelWithJSON:responseObject];
+        if (model.ok) {
+            !success ?: success(model.books);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        !fail ?: fail(error);
+    }];
+}
+
 @end

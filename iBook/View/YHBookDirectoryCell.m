@@ -35,11 +35,11 @@
 - (void)setupSubviews {
     
     self.leftImageView = [[UIImageView alloc] init];
-    self.leftImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.leftImageView.image = [UIImage imageNamed:@"book_mulu"];
     [self.contentView addSubview:self.leftImageView];
     
     self.rightImageView = [[UIImageView alloc] init];
-    self.rightImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.rightImageView.image = [UIImage imageNamed:@"book_right"];
     [self.contentView addSubview:self.rightImageView];
     
     self.titleLabel = [[UILabel alloc] init];
@@ -61,13 +61,13 @@
     [super layoutSubviews];
     
     [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-        make.top.bottom.mas_equalTo(self.contentView).inset(10);
+        make.size.mas_equalTo(CGSizeMake(16, 16));
         make.left.mas_equalTo(self.contentView).mas_offset(15);
+        make.centerY.mas_equalTo(self.contentView);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.leftImageView.mas_right).mas_offset(10);
-        make.centerY.mas_equalTo(self.contentView);
+        make.top.bottom.mas_equalTo(self.contentView).inset(10);
     }];
     [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.titleLabel.mas_right).mas_offset(10);
@@ -75,7 +75,7 @@
         make.right.lessThanOrEqualTo(self.rightImageView.mas_left).mas_offset(10);
     }];
     [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(16, 16));
         make.right.mas_equalTo(self.contentView).mas_offset(-15);
         make.centerY.mas_equalTo(self.contentView);
     }];

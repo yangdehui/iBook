@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookInfoSectionFooterCell : UICollectionViewCell
 
-- (void)setContentButton:(NSString *)title icon:(NSString *)icon;
+- (void)setContentButton:(NSString *)title icon:(NSString *)icon imagePosition:(imagePosition)imagePosition;
 @end
 
 NS_ASSUME_NONNULL_END

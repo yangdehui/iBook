@@ -11,6 +11,7 @@
 #import "YHBookInfoTagsSectionController.h"
 #import "YHBookInfoReviewSectionController.h"
 #import "YHBookInfoRelateRecommendSectionController.h"
+#import "YHBookInfoAuthorBooksSectionController.h"
 #import "YHBookInfoManager.h"
 #import <IGListKit.h>
 
@@ -103,6 +104,8 @@
         return [YHBookInfoReviewSectionController new];
     } else if ([object isKindOfClass:YHBookRecommendViewModel.class]) {
         return [YHBookInfoRelateRecommendSectionController new];
+    } else if ([object isKindOfClass:YHAuthorBooksViewModel.class]) {
+        return [YHBookInfoAuthorBooksSectionController new];
     }
     return nil;
 }

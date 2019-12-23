@@ -47,6 +47,7 @@
     self.rightButton = [[UIButton alloc] init];
     [self.rightButton setTitleColor:UIColor.flatGreenColor forState:UIControlStateNormal];
     [self.rightButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    self.rightButton.contentMode = UIViewContentModeRight;
     [self.contentView addSubview:self.rightButton];
     
     self.lineLabel = [[UILabel alloc] init];

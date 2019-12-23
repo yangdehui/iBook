@@ -72,6 +72,8 @@
 		01CDD65123A33522004A8A80 /* YHBookDirectoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65023A33522004A8A80 /* YHBookDirectoryCell.m */; };
 		01CDD65823A366F6004A8A80 /* YHBookInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */; };
 		01CDD65C23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */; };
+		01FA3CD123B05D9E004EF566 /* YHAuthorBooksViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FA3CD023B05D9E004EF566 /* YHAuthorBooksViewModel.m */; };
+		01FA3CD423B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FA3CD323B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.m */; };
 		15C4A17223A926B1000C2AF8 /* YHBookReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C4A17123A926B1000C2AF8 /* YHBookReviewModel.m */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +208,10 @@
 		01CDD65723A366F6004A8A80 /* YHBookInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoManager.m; sourceTree = "<group>"; };
 		01CDD65A23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoHeaderSectionController.h; sourceTree = "<group>"; };
 		01CDD65B23A37E0D004A8A80 /* YHBookInfoHeaderSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoHeaderSectionController.m; sourceTree = "<group>"; };
+		01FA3CCF23B05D9E004EF566 /* YHAuthorBooksViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAuthorBooksViewModel.h; sourceTree = "<group>"; };
+		01FA3CD023B05D9E004EF566 /* YHAuthorBooksViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAuthorBooksViewModel.m; sourceTree = "<group>"; };
+		01FA3CD223B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookInfoAuthorBooksSectionController.h; sourceTree = "<group>"; };
+		01FA3CD323B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBookInfoAuthorBooksSectionController.m; sourceTree = "<group>"; };
 		021D560209F3E3AA0729863C /* Pods-iBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBook.debug.xcconfig"; path = "Target Support Files/Pods-iBook/Pods-iBook.debug.xcconfig"; sourceTree = "<group>"; };
 		1049F4E6A7755390156E5405 /* libPods-iBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C4A17023A926B1000C2AF8 /* YHBookReviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBookReviewModel.h; sourceTree = "<group>"; };
@@ -434,6 +440,8 @@
 				015072CD23AB131700811C7A /* YHBookReviewViewModel.m */,
 				011C9C1923AA55A300CAF150 /* YHBookRecommendViewModel.h */,
 				011C9C1A23AA55A300CAF150 /* YHBookRecommendViewModel.m */,
+				01FA3CCF23B05D9E004EF566 /* YHAuthorBooksViewModel.h */,
+				01FA3CD023B05D9E004EF566 /* YHAuthorBooksViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -449,6 +457,8 @@
 				011C9C0823A9CE7100CAF150 /* YHBookInfoReviewSectionController.m */,
 				015072CF23AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.h */,
 				015072D023AB1E9C00811C7A /* YHBookInfoRelateRecommendSectionController.m */,
+				01FA3CD223B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.h */,
+				01FA3CD323B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.m */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -586,6 +596,7 @@
 			files = (
 				013E77352396480300279E18 /* NSString+PJR.m in Sources */,
 				01CDD65823A366F6004A8A80 /* YHBookInfoManager.m in Sources */,
+				01FA3CD123B05D9E004EF566 /* YHAuthorBooksViewModel.m in Sources */,
 				019F14FC23A76DAC00CF3AB1 /* YHBookLongIntroCell.m in Sources */,
 				0142B29223A0ECE4003A757F /* YHRankingViewController.m in Sources */,
 				0142B28C23A0DD8E003A757F /* YHWebQueryModel.m in Sources */,
@@ -620,6 +631,7 @@
 				011C9C0F23AA000800CAF150 /* YHBookInfoReviewContentCell.m in Sources */,
 				011C9C1B23AA55A300CAF150 /* YHBookRecommendViewModel.m in Sources */,
 				0193F2F723965A3000A481B3 /* WebCacheHelpler.m in Sources */,
+				01FA3CD423B0683A004EF566 /* YHBookInfoAuthorBooksSectionController.m in Sources */,
 				010B9036239E0F360042A96C /* YHBookMallViewController.m in Sources */,
 				013E77292396480300279E18 /* UIColor+RGBValues.m in Sources */,
 				013E773D2396480400279E18 /* UILabel+Common.m in Sources */,

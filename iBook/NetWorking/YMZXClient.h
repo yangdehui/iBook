@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getBooksWithRecommend:(NSString *)bookId success:(void (^)(NSArray <YHBookInfoModel *>*bookArray))success fail:(void (^)(NSError *error))fail;
 
+- (void)getAuthorBooksWith:(NSString *)author success:(void (^)(NSArray <YHBookInfoModel *>*bookArray))success fail:(void (^)(NSError *error))fail;
 @end
 
 NS_ASSUME_NONNULL_END
