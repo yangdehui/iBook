@@ -34,8 +34,12 @@
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-    const CGFloat width = self.collectionContext.containerSize.width;
-    return CGSizeMake(width, 60);
+    CGFloat width = self.collectionContext.containerSize.width;
+    CGFloat height = 50;
+    if (index == 1) {
+        height = 110;
+    }
+    return CGSizeMake(width, height);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {

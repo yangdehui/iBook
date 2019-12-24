@@ -60,47 +60,38 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(16, 16));
-        make.left.mas_equalTo(self.contentView).mas_offset(15);
-        make.centerY.mas_equalTo(self.contentView);
-    }];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.leftImageView.mas_right).mas_offset(10);
-        make.top.bottom.mas_equalTo(self.contentView).inset(10);
-    }];
-    [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.titleLabel.mas_right).mas_offset(10);
-        make.centerY.mas_equalTo(self.contentView);
-        make.right.lessThanOrEqualTo(self.rightImageView.mas_left).mas_offset(10);
-    }];
-    [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(16, 16));
-        make.right.mas_equalTo(self.contentView).mas_offset(-15);
-        make.centerY.mas_equalTo(self.contentView);
-    }];
-    [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentView).mas_offset(15);
-        make.bottom.right.mas_equalTo(self.contentView);
-        make.height.mas_equalTo(0.5);
-    }];
+    CGRect frame = self.bounds;
+    self.leftImageView.frame = CGRectMake(self.insets.left, [self originY:self.imageSize.height], self.imageSize.width, self.imageSize.height);
     
+    CGFloat titleOriginX = CGRectGetMaxX(self.leftImageView.frame) + self.insets.left;
+    CGSize titleSize = [self.descLabel sizeThatFits:CGSizeMake(frame.size.width, 14)];
+    self.titleLabel.frame = CGRectMake(titleOriginX, [self originY:14], titleSize.width, titleSize.height);
+    
+    CGFloat descOriginX = CGRectGetMaxX(self.titleLabel.frame) + self.insets.left;
+    CGSize descSize = [self.descLabel sizeThatFits:CGSizeMake(frame.size.width, 13)];
+    self.descLabel.frame = CGRectMake(descOriginX, [self originY:13], descSize.width, descSize.height);
+    
+    CGFloat rightImageOriginX = frame.size.width - self.imageSize.width - self.insets.left;
+    self.rightImageView.frame = CGRectMake(rightImageOriginX, [self originY:self.imageSize.height], self.imageSize.width, self.imageSize.height);
+    
+    self.lineLabel.frame = CGRectMake(self.insets.left, frame.size.height - 0.5, frame.size.width - self.insets.left, 0.5);
+}
+
+- (CGFloat)originY:(CGFloat)height {
+    return (self.bounds.size.height - height)/2;
+}
+
+- (CGSize)imageSize {
+    return CGSizeMake(16, 16);
+}
+
+- (UIEdgeInsets)insets{
+    return UIEdgeInsetsMake(8, 15, 8, 15);
 }
 
 - (void)setDirectoryModel:(YHBookHeaderViewModel *)directoryModel {
     self.titleLabel.text = @"目录";
     self.descLabel.text = [NSString stringWithFormat:@"共%ld章",directoryModel.chaptersCount];
-}
-
--(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    [super setNeedsLayout];
-    [super layoutIfNeeded];
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
-    CGRect newFrame = layoutAttributes.frame;
-    // 注意: 不要修改宽度
-    newFrame.size.height = ceil(size.height);
-    layoutAttributes.frame = newFrame;
-    return layoutAttributes;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "YHBookInfoRelateRecommendSectionController.h"
 #import "YHBookInfoSectionHeaderCell.h"
-#import "YHBookInfoCoverCell.h"
+#import "YHBookInfoFlowLayoutCoverCell.h"
 #import "YHBookInfoSectionFooterCell.h"
 #import "YHBookDetailViewController.h"
 
@@ -25,8 +25,8 @@
     if (self) {
         self.supplementaryViewSource = self;
         self.inset = UIEdgeInsetsMake(0, 15, 10, 15);
-        self.minimumInteritemSpacing = 10;
-        self.minimumLineSpacing = 10;
+        self.minimumInteritemSpacing = 15;
+        self.minimumLineSpacing = 12;
     }
     return self;
 }
@@ -39,12 +39,12 @@
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     const CGFloat width = self.collectionContext.containerSize.width;
-    CGSize size = CGSizeMake(floor((width - 60) / 4), 160);
+    CGSize size = CGSizeMake(floor((width - 75) / 4), 140);
     return size;
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    YHBookInfoCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoCoverCell.class forSectionController:self atIndex:index];
+    YHBookInfoFlowLayoutCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoFlowLayoutCoverCell.class forSectionController:self atIndex:index];
     [cell setBookInfoCover:_recommendViewModel.bookInfoArray[index]];
     return cell;
 }

@@ -15,13 +15,6 @@
 
 @implementation YHBookInfoReviewContentCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubviews];
@@ -37,26 +30,12 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    CGRect rect = self.bounds;
-    [self.reviewScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(rect.size.width, 110)).priorityHigh();
-        make.top.bottom.centerX.mas_equalTo(self.contentView);
-    }];
+
+    self.reviewScrollView.frame = self.bounds;
 }
 
 - (void)setReviewViewModels:(NSArray<YHBookReviewModel *> *)reviewViewModels {
     [self.reviewScrollView setReviewViewModels:reviewViewModels];
-}
-
--(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    [super setNeedsLayout];
-    [super layoutIfNeeded];
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
-    CGRect newFrame = layoutAttributes.frame;
-    newFrame.size.height = ceil(size.height);
-    layoutAttributes.frame = newFrame;
-    return layoutAttributes;
 }
 
 @end

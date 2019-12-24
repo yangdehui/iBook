@@ -17,13 +17,6 @@
 
 @implementation YHBookInfoSectionHeaderCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubviews];
@@ -58,25 +51,21 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.separatorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(3, 13));
-        make.left.centerY.mas_equalTo(self.contentView);
-    }];
-    [self.leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentView).mas_offset(15);
-        make.centerY.mas_equalTo(self.contentView);
-        make.top.bottom.mas_equalTo(self.contentView).inset(15);
-    }];
-    [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60, 30));
-        make.right.mas_equalTo(self.contentView).mas_offset(-10);
-        make.centerY.mas_equalTo(self.contentView);
-    }];
-    [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.mas_equalTo(self.contentView);
-        make.height.mas_equalTo(0.5);
-    }];
+    CGRect frame = self.bounds;
+    CGSize separatorSize = CGSizeMake(3, 13);
+    self.separatorLabel.frame = CGRectMake(0, (frame.size.height - separatorSize.height)/2, separatorSize.width, separatorSize.height);
     
+    CGSize leftSize = [self.leftLabel sizeThatFits:CGSizeMake(frame.size.width, 14)];
+    self.leftLabel.frame = CGRectMake(self.insets.left, (frame.size.height - leftSize.height)/2, leftSize.width, leftSize.height);
+    
+    CGSize rightSize = [self.rightButton sizeThatFits:CGSizeMake(frame.size.width, 12)];
+    self.rightButton.frame = CGRectMake(frame.size.width - self.insets.left - rightSize.width, (frame.size.height - rightSize.height)/2, rightSize.width, rightSize.height);
+    
+    self.lineLabel.frame = CGRectMake(0, frame.size.height - 0.5, frame.size.width, 0.5);
+}
+
+- (UIEdgeInsets)insets{
+    return UIEdgeInsetsMake(8, 15, 8, 15);
 }
 
 - (void)setLeftTitle:(NSString *)title {
@@ -90,16 +79,6 @@
 
 - (void)setLineHidden {
     self.lineLabel.hidden = YES;
-}
-
--(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    [super setNeedsLayout];
-    [super layoutIfNeeded];
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
-    CGRect newFrame = layoutAttributes.frame;
-    newFrame.size.height = ceil(size.height);
-    layoutAttributes.frame = newFrame;
-    return layoutAttributes;
 }
 
 @end

@@ -34,9 +34,14 @@
     return self.tagsViewModel.tagsArray.count;
 }
 
+//- (CGSize)sizeForItemAtIndex:(NSInteger)index {
+////    CGFloat width = self.collectionContext.containerSize.width;
+//    return CGSizeMake(60, 20);
+//}
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-//    CGFloat width = self.collectionContext.containerSize.width;
-    return CGSizeMake(60, 20);
+    CGFloat width = self.collectionContext.containerSize.width;
+    NSString *text = _tagsViewModel.tagsArray[index];
+    return CGSizeMake([YHBookTagCell textWidth:text width:width], 20);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {

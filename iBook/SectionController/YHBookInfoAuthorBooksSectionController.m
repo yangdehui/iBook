@@ -8,7 +8,7 @@
 
 #import "YHBookInfoAuthorBooksSectionController.h"
 #import "YHBookInfoSectionHeaderCell.h"
-#import "YHBookInfoCoverCell.h"
+#import "YHBookInfoFullWidthCoverCell.h"
 #import "YHBookDetailViewController.h"
 
 @interface YHBookInfoAuthorBooksSectionController ()<IGListSupplementaryViewSource>
@@ -22,9 +22,6 @@
     self = [super init];
     if (self) {
         self.supplementaryViewSource = self;
-        self.inset = UIEdgeInsetsMake(0, 15, 10, 15);
-        self.minimumInteritemSpacing = 10;
-        self.minimumLineSpacing = 10;
     }
     return self;
 }
@@ -37,12 +34,11 @@
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     const CGFloat width = self.collectionContext.containerSize.width;
-    CGSize size = CGSizeMake(floor((width - 60) / 4), 160);
-    return size;
+    return CGSizeMake(width, 120);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    YHBookInfoCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoCoverCell.class forSectionController:self atIndex:index];
+    YHBookInfoFullWidthCoverCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookInfoFullWidthCoverCell.class forSectionController:self atIndex:index];
     [cell setBookInfoCover:_authorBooksViewModel.bookInfoArray[index]];
     return cell;
 }
@@ -66,6 +62,7 @@
 -(UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
     YHBookInfoSectionHeaderCell *view = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:YHBookInfoSectionHeaderCell.class atIndex:index];
     [view setLeftTitle:_authorBooksViewModel.header];
+    [view setLineHidden];
     return view;
 }
 

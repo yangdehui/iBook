@@ -15,13 +15,6 @@
 
 @implementation YHBookInfoSectionFooterCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubviews];
@@ -44,33 +37,15 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    CGRect rect = self.bounds;
-    [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(self.contentView);
-        make.height.mas_equalTo(0.5);
-    }];
-    [self.contentButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(rect.size.width, 30)).priorityHigh();
-        make.top.bottom.mas_equalTo(self.contentView).inset(10);
-        make.centerX.mas_equalTo(self.contentView);
-    }];
-    
+    CGRect frame = self.bounds;
+    self.lineLabel.frame = CGRectMake(0, 0, frame.size.width, 0.5);
+    self.contentButton.frame = frame;
 }
 
 - (void)setContentButton:(NSString *)title icon:(NSString *)icon imagePosition:(imagePosition)imagePosition {
     [self.contentButton setTitle:title forState:UIControlStateNormal];
     [self.contentButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
     [self.contentButton setImagePosition:imagePosition spacing:5];
-}
-
--(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    [super setNeedsLayout];
-    [super layoutIfNeeded];
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
-    CGRect newFrame = layoutAttributes.frame;
-    newFrame.size.height = ceil(size.height);
-    layoutAttributes.frame = newFrame;
-    return layoutAttributes;
 }
 
 @end

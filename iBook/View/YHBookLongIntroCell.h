@@ -13,8 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHBookLongIntroCell : UICollectionViewCell
 
-- (void)setLongIntro:(YHBookHeaderViewModel *)longIntro;
-- (void)updateHeight:(BOOL)expanded;
+@property (nonatomic, assign) NSInteger numberOfLines;
+
+@property (nonatomic, strong) YHBookHeaderViewModel *longIntro;
+
++(CGFloat)textHeight:(NSString *)text width:(CGFloat)width;
++(CGFloat)singleLineHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END

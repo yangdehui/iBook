@@ -1,8 +1,8 @@
 //
-//  YHBookInfoCoverCell.h
+//  YHBookInfoFlowLayoutCoverCell.h
 //  iBook
 //
-//  Created by zikeys on 2019/12/19.
+//  Created by zikeys on 2019/12/24.
 //  Copyright © 2019 zikeys. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHBookInfoCoverCell : UICollectionViewCell
+@interface YHBookInfoFlowLayoutCoverCell : UICollectionViewCell
 - (void)setBookInfoCover:(YHBookInfoModel *)bookInfo;
 @end
 

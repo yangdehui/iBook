@@ -14,13 +14,6 @@
 
 @implementation YHBookLongIntroCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubviews];
@@ -32,42 +25,58 @@
     
     self.longIntroLabel = [[UILabel alloc] init];
     self.longIntroLabel.textColor = TEXT_COLOR_A;
-    self.longIntroLabel.font = [UIFont systemFontOfSize:14];
-    self.longIntroLabel.numberOfLines = 4;
+    self.longIntroLabel.font = YHBookLongIntroCell.font;
+    self.longIntroLabel.numberOfLines = 1;
+    self.longIntroLabel.textAlignment = NSTextAlignmentLeft;
     [self.contentView addSubview:self.longIntroLabel];
+}
+
++ (UIFont *)font{
+    return [UIFont systemFontOfSize:14.0];
+}
+
++ (UIEdgeInsets)insets{
+    return UIEdgeInsetsMake(8, 15, 8, 15);
+}
+
+CGFloat lineSpacing = 5.0;
+
++ (CGFloat)textHeight:(NSString *)text width:(CGFloat)width{
+    CGSize constrainedSize = CGSizeMake(width - self.insets.left - self.insets.right, FLT_MAX);
+    
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineSpacing];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    
+    NSDictionary *attributes=@{NSFontAttributeName:self.font,
+                               NSParagraphStyleAttributeName:paragraphStyle};
+    
+    CGRect bounds=[text boundingRectWithSize:constrainedSize options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    return ceil(bounds.size.height) + self.insets.top + self.insets.bottom;
+}
+
++(CGFloat)singleLineHeight{
+    return self.font.lineHeight + self.insets.top + self.insets.bottom;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    [self.longIntroLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView).mas_offset(10);
-        make.left.mas_equalTo(self.contentView).mas_offset(15);
-        make.right.mas_equalTo(self.contentView).mas_offset(-15);
-        make.bottom.mas_equalTo(self.contentView).mas_offset(-15);
-    }];
+    CGRect bounds = self.contentView.bounds;
+    _longIntroLabel.frame = UIEdgeInsetsInsetRect(bounds, YHBookLongIntroCell.insets);
 }
 
 - (void)setLongIntro:(YHBookHeaderViewModel *)longIntro {
     
     _longIntroLabel.text = longIntro.longIntro;
-    [_longIntroLabel setText:longIntro.longIntro lines:0 andLineSpacing:5 constrainedToSize:CGSizeMake(self.frame.size.width - 30, MAXFLOAT) andAttColor:0];
-}
-
-- (void)updateHeight:(BOOL)expanded {
     
-    self.longIntroLabel.numberOfLines = expanded ? 0 : 4;
+    [_longIntroLabel setText:longIntro.longIntro lines:0 andLineSpacing:lineSpacing constrainedToSize:CGSizeMake(self.frame.size.width - YHBookLongIntroCell.insets.left - YHBookLongIntroCell.insets.right, MAXFLOAT) andAttColor:0];
 }
 
--(UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    [super setNeedsLayout];
-    [super layoutIfNeeded];
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
-    CGRect newFrame = layoutAttributes.frame;
-    // 注意: 不要修改宽度
-    newFrame.size.height = ceil(size.height);
-    layoutAttributes.frame = newFrame;
-    return layoutAttributes;
+- (void)setNumberOfLines:(NSInteger)numberOfLines {
+    self.longIntroLabel.numberOfLines = numberOfLines;
 }
 
 @end

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setTagsModel:(YHBookTagsViewModel *)tagsModel index:(NSInteger)index;
 
++(CGFloat)textWidth:(NSString *)text width:(CGFloat)width;
+
 @end
 
 NS_ASSUME_NONNULL_END

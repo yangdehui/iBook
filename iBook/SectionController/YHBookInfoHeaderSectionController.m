@@ -34,15 +34,16 @@
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-    const CGFloat width = self.collectionContext.containerSize.width;
-    return CGSizeMake(width, 60);
+    CGFloat width=[self.collectionContext containerSize].width;
+    CGFloat height = _expanded ? [YHBookLongIntroCell textHeight:_headerViewModel.longIntro width:width] : YHBookLongIntroCell.singleLineHeight;
+    return CGSizeMake(width, height);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
 
     YHBookLongIntroCell * cell = [self.collectionContext dequeueReusableCellOfClass:YHBookLongIntroCell.class forSectionController:self atIndex:index];
     [cell setLongIntro:_headerViewModel];
-    [cell updateHeight:_expanded];
+    cell.numberOfLines = _expanded ? 0 : 1;
     return cell;
 }
 
@@ -52,10 +53,9 @@
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
     _expanded = !_expanded;
-    [self.collectionContext performBatchAnimated:false updates:^(id<IGListBatchContext>  _Nonnull batchContext) {
+    [self.collectionContext performBatchAnimated:true updates:^(id<IGListBatchContext>  _Nonnull batchContext) {
         [batchContext reloadInSectionController:self atIndexes:[NSIndexSet indexSetWithIndex:0]];
     } completion:nil];
-//    [self.collectionContext invalidateLayoutForSectionController:self completion:nil];
 }
 
 #pragma mark - IGListSupplementaryViewSource
