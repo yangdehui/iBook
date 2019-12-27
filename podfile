@@ -18,4 +18,5 @@ pod 'IQKeyboardManager'
 pod 'IGListKit', '~> 4.0.0'
 pod 'SDCycleScrollView','>= 1.80'
 pod 'HBDNavigationBar', '~> 1.7.2'
+pod "PYSearch"
 end

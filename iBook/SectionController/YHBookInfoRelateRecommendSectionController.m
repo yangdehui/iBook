@@ -34,7 +34,8 @@
 #pragma mark - IGListSectionController Overrides
 
 - (NSInteger)numberOfItems {
-    return 8;
+    NSInteger count = _recommendViewModel.bookInfoArray.count;
+    return count > 8 ? 8 : count;
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {

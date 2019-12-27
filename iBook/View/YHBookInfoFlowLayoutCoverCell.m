@@ -51,11 +51,11 @@ static CGFloat spacing = 3;
     
     CGFloat titleOriginY = CGRectGetMaxY(self.coverImageView.frame) + spacing;
     CGSize titleSize = [self.titleLabel sizeThatFits:CGSizeMake(frame.size.width, 13)];
-    self.titleLabel.frame = CGRectMake(0, titleOriginY, frame.size.width, ceil(titleSize.height));
+    self.titleLabel.frame = CGRectMake(0, titleOriginY, frame.size.width, titleSize.height);
     
     CGFloat authorOriginY = CGRectGetMaxY(self.titleLabel.frame) + spacing;
     CGSize authorSize = [self.authorLabel sizeThatFits:CGSizeMake(frame.size.width, 13)];
-    self.authorLabel.frame = CGRectMake(0, authorOriginY, frame.size.width, ceil(authorSize.height));
+    self.authorLabel.frame = CGRectMake(0, authorOriginY, frame.size.width, authorSize.height);
 }
 
 - (void)setBookInfoCover:(YHBookInfoModel *)bookInfo {

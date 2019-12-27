@@ -13,6 +13,9 @@ static CGFloat spacing = 8;
 @interface YHBookInfoFullWidthCoverCell ()
 @property (nonatomic, strong) UIImageView *coverImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *majorCateLabel;
+@property (nonatomic, strong) UILabel *retentionRatioLabel;
+@property (nonatomic, strong) CALayer *lineLayer;
 @end
 
 @implementation YHBookInfoFullWidthCoverCell
@@ -34,6 +37,17 @@ static CGFloat spacing = 8;
     self.titleLabel.font = [UIFont systemFontOfSize:13];
     self.titleLabel.textColor = TEXT_COLOR_A;
     [self.contentView addSubview:self.titleLabel];
+    
+    self.majorCateLabel = [[UILabel alloc] init];
+    self.majorCateLabel.font = [UIFont systemFontOfSize:12];
+    self.majorCateLabel.textColor = TEXT_COLOR_C;
+    [self.contentView addSubview:self.majorCateLabel];
+
+    self.retentionRatioLabel = [[UILabel alloc] init];
+    self.retentionRatioLabel.font = [UIFont systemFontOfSize:12];
+    self.retentionRatioLabel.textColor = TEXT_COLOR_C;
+    [self.contentView addSubview:self.retentionRatioLabel];
+
 }
 
 - (void)layoutSubviews {
@@ -45,13 +59,19 @@ static CGFloat spacing = 8;
     
     CGFloat titleOriginY = CGRectGetMaxY(self.coverImageView.frame) + spacing;
     CGSize titleSize = [self.titleLabel sizeThatFits:CGSizeMake(frame.size.width, 13)];
-    self.titleLabel.frame = CGRectMake(0, titleOriginY, frame.size.width, ceil(titleSize.height));
+    self.titleLabel.frame = CGRectMake(0, titleOriginY, frame.size.width, titleSize.height);
+    
+    CGFloat retentionRatioOriginY = CGRectGetMaxY(self.titleLabel.frame) + spacing;
+    CGSize retentionRatioSize = [self.retentionRatioLabel sizeThatFits:CGSizeMake(frame.size.width, 13)];
+    self.retentionRatioLabel.frame = CGRectMake(0, retentionRatioOriginY, frame.size.width, retentionRatioSize.height);
     
 }
 
 - (void)setBookInfoCover:(YHBookInfoModel *)bookInfo {
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:bookInfo.cover] placeholderImage:nil];
     self.titleLabel.text = bookInfo.title;
+    self.majorCateLabel.text = bookInfo.majorCate;
+    self.retentionRatioLabel.text = [NSString stringWithFormat:@"留存率%.2f",bookInfo.retentionRatio];
 }
 
 @end

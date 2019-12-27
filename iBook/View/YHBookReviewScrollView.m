@@ -48,17 +48,17 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     self.avatarImageView.frame = CGRectMake(self.insets.left, self.insets.left, 20, 20);
     
-    CGSize nickSize = [self.nicknameLabel sizeThatFits:CGSizeMake(frame.size.width - self.avatarImageView.frame.size.width - self.insets.left*3, 13)];
+    CGSize nickSize = CGSizeMake(frame.size.width - self.avatarImageView.frame.size.width - self.insets.left*3, 13);
     CGFloat nickOriginX = self.avatarImageView.frame.size.width + self.insets.left*2;
     CGFloat nickOriginY = (self.avatarImageView.frame.size.height - nickSize.height)/2 + self.insets.left;
-    self.nicknameLabel.frame = CGRectMake(nickOriginX, nickOriginY, ceil(nickSize.width), ceil(nickSize.height));
+    self.nicknameLabel.frame = CGRectMake(nickOriginX, nickOriginY, nickSize.width, nickSize.height);
     
-    CGSize contentSize = [self.contentLabel sizeThatFits:CGSizeMake(frame.size.width - self.avatarImageView.frame.size.width - self.insets.left*3, MAXFLOAT)];
+    CGSize contentSize = CGSizeMake(frame.size.width - self.avatarImageView.frame.size.width - self.insets.left*3, 35);
     CGFloat contentOriginY = CGRectGetMaxY(self.nicknameLabel.frame) + self.insets.top;
-    self.contentLabel.frame = CGRectMake(nickOriginX, contentOriginY, ceil(contentSize.width), ceil(contentSize.height));
+    self.contentLabel.frame = CGRectMake(nickOriginX, contentOriginY, contentSize.width, contentSize.height);
 }
 
 - (UIEdgeInsets)insets{

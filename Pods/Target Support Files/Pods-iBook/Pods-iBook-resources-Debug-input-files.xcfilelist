@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-iBook/Pods-iBook-resources.sh
 ${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/PYSearch/PYSearch/PYSearch.bundle
 ${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle
 ${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle

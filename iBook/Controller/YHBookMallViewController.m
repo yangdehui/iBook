@@ -43,9 +43,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
+    [self setNavigationBar];
 }
 
 - (void)setNavigationBar {
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"book_mulu"] style:UIBarButtonItemStylePlain target:self action:@selector(searchBarClick)];
+}
+
+- (void)searchBarClick {
+    
 }
 
 #pragma mark - WMPageControllerDataSource
@@ -64,7 +71,7 @@
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
 
-    return CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    return CGRectMake(0, 0, SCREEN_WIDTH - 44, 44);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {

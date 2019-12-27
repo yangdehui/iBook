@@ -26,7 +26,7 @@
     self.tagLabel = [[UILabel alloc] init];
     self.tagLabel.font = YHBookTagCell.font;
     self.tagLabel.textAlignment = NSTextAlignmentCenter;
-    self.tagLabel.layer.borderWidth = 0.4;
+    self.tagLabel.layer.borderWidth = 0.5;
     self.tagLabel.layer.cornerRadius = 3;
     self.tagLabel.layer.masksToBounds = YES;
     [self.contentView addSubview:self.tagLabel];
@@ -45,7 +45,7 @@
 }
 
 +(CGFloat)textWidth:(NSString *)text width:(CGFloat)width{
-    CGSize constrainedSize = CGSizeMake(width, 20);
+    CGSize constrainedSize = CGSizeMake(width, 25);
     
     NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;

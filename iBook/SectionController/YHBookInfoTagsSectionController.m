@@ -34,10 +34,6 @@
     return self.tagsViewModel.tagsArray.count;
 }
 
-//- (CGSize)sizeForItemAtIndex:(NSInteger)index {
-////    CGFloat width = self.collectionContext.containerSize.width;
-//    return CGSizeMake(60, 20);
-//}
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
     CGFloat width = self.collectionContext.containerSize.width;
     NSString *text = _tagsViewModel.tagsArray[index];

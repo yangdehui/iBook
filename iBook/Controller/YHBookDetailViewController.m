@@ -72,21 +72,18 @@
 }
 
 - (void)setSubViews {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
     self.collectionView.bounces = false;
     self.collectionView.backgroundColor = kWhiteColor;
     [self.view addSubview:self.collectionView];
     self.adapter = [[IGListAdapter alloc] initWithUpdater:IGListAdapterUpdater.new viewController:self];
     self.adapter.collectionView = self.collectionView;
     self.adapter.dataSource = self;
-    
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.collectionView.frame = self.view.bounds;
 }
 
 #pragma mark - IGListAdapterDataSource
